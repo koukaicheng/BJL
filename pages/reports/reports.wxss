@@ -1,0 +1,336 @@
+/* pages/reports/reports.wxss */
+
+page {
+  background: #fafafa;
+}
+
+/*选项卡  */
+
+.tab-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  width: 100%;
+  height: 50px;
+  border-bottom: 1px #f5f5f5 solid;
+  font-size: 14px;
+  background: #fff;
+  z-index: 999;
+}
+
+.tab-item {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+}
+
+.tab-item .msg {
+  position: absolute;
+  background-color: #fa7070;
+  font-size: 24rpx;
+  color: #fff;
+  width: 26rpx;
+  height: 26rpx;
+  line-height: 26rpx;
+  text-align: center;
+  border-radius: 50%;
+  top: 10rpx;
+}
+
+.tab-item.active::after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  background: #52b8f5;
+  bottom: 0px;
+  left: 25%;
+  right: 25%;
+}
+
+.container {
+  padding-top: 50px;
+  height: 100vh;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.content {
+  padding: 20rpx 28rpx;
+  margin: 20rpx 0;
+  background: #fff;
+}
+
+.header {
+  background: #fff;
+  height: 128rpx;
+  padding: 0 28rpx;
+}
+
+.header .iconfont {
+  color: #52b8f5;
+}
+
+.header .time .title {
+  font-size: 32rpx;
+  color: #333;
+}
+
+.header .time .number {
+  font-size: 28rpx;
+  color: #999;
+  padding-top: 10rpx;
+}
+
+.time-button {
+  height: 128rpx;
+  width: 100rpx;
+  line-height: 128rpx;
+  box-sizing: border-box;
+}
+
+.header .right {
+  text-align: right;
+}
+
+
+.containe .box{
+margin: 110rpx 12rpx;
+  background: #fff;
+}
+.containe .box .item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.containe .box .item .iconfont{
+  color: #999
+}
+.containe .box .item .left{
+  padding: 15rpx 15rpx;
+  display: flex;
+  flex-direction: column;
+  font-size: 26rpx;
+  /* border-bottom: 1px solid #999; */
+}
+.containe .box .item .left .time{
+  /* position: relative; */
+  display: flex;
+  align-items: center;
+}
+.containe .box .item .left .time .yuan{
+margin-left: 10rpx;
+  width: 12rpx;
+  height: 12rpx;
+  background: red;
+  border-radius: 50%;
+  /* top: 6rpx;
+  right: 0; */
+}
+.containe .box .item  .reorts_no{
+  padding-top: 10rpx;
+}
+.content .top .condition {
+  width: 322rpx;
+  height: 148rpx;
+  background-color: #edf7fd;
+  border-radius: 8rpx;
+}
+
+.content .top .condition .title {
+  font-size: 26rpx;
+  color: #666;
+}
+
+.content .top .condition .status {
+  font-size: 32rpx;
+  padding-top: 16rpx;
+  color: #fa7070;
+}
+
+.content .middle {
+  padding: 30rpx 0;
+}
+
+.content .middle .item {
+  flex: 1;
+}
+
+.content .middle .item .title {
+  color: #999;
+  font-size: 26rpx;
+}
+
+.content .middle .item .company {
+  color: #333;
+  font-size: 34rpx;
+}
+
+.content .bottom {
+  padding-top: 20rpx;
+  color: #ffaf48;
+}
+
+.content .bottom .left {
+  padding-right: 26rpx;
+}
+
+.content .bottom .left .iconfont {
+  font-size: 40rpx;
+}
+
+.content .bottom .right {
+  width: 646rpx;
+  font-size: 24rpx;
+  line-height: 36rpx;
+}
+
+.content .line {
+  /*margin-top: 20rpx;*/
+  align-items: flex-start;
+}
+
+.content .line .text {
+  color: #52b8f5;
+  font-size: 28rpx;
+  padding: 0 30rpx;
+}
+
+.content .line .line-item {
+  flex: 1;
+  width: 246rpx;
+  height: 2rpx;
+  background: #52b8f5;
+  position: relative;
+  margin-top: 20rpx;
+}
+
+.content .line .box .company {
+  font-size: 26rpx;
+  color: #666;
+  margin-top: 10rpx;
+}
+
+.content .line .line-item:nth-child(1):after {
+  position: absolute;
+  content: '';
+  width: 12rpx;
+  height: 12rpx;
+  border-radius: 50%;
+  background: #52b8f5;
+  top: -4rpx;
+  right: 0;
+}
+
+.content .line .line-item:nth-child(3):after {
+  position: absolute;
+  content: '';
+  width: 12rpx;
+  height: 12rpx;
+  border-radius: 50%;
+  background: #52b8f5;
+  top: -4rpx;
+  left: 0;
+}
+
+.content .standards {
+  margin-top: 20rpx;
+  height: 310rpx;
+  background-color: #fafafa;
+  border: solid 1rpx #e6e6e6;
+}
+
+.content .standards .item {
+  font-size: 30rpx;
+  padding: 20rpx 20rpx;
+}
+
+.content .standards .item .title {
+  color: #333;
+}
+
+.content .standards .item .data {
+  color: #999;
+}
+
+.content .table {
+  margin-top: 20rpx;
+  border: solid 1rpx #e6e6e6;
+  background-color: #fafafa;
+}
+
+.content .table .table-item {
+}
+
+.content .table .table-item .left {
+  flex: 1;
+}
+
+.content .table .table-item .left .text {
+  font-size: 30rpx;
+  color: #333;
+}
+
+.content .table .table-item .right {
+  border-left: 1px solid #e6e6e6;
+  min-height: 70rpx;
+  padding: 20rpx 50rpx;
+}
+
+.content .table .table-item .right .text {
+  color: #999;
+  font-size: 28rpx;
+}
+
+.content .table .table-item .right {
+  flex: 2;
+}
+
+.content .proposal {
+  margin-top: 20rpx;
+  min-height: 304rpx;
+  background: #fafafa;
+  padding: 20rpx 20rpx 20rpx 30rpx;
+  color: #999;
+  font-size: 28rpx;
+}
+
+.last {
+  padding-bottom: 30rpx;
+}
+
+.statusText {
+  padding: 30rpx 28rpx;
+}
+
+.statusText .text {
+  font-size: 24rpx;
+  color: #666;
+  text-align: center;
+}
+
+.guidance {
+  background: #fff;
+}
+
+.guidance-box {
+  font-size: 14px;
+  color: #666;
+}
+
+.guidance-item {
+  position: relative;
+  padding: 10px;
+}
+
+.guidance-item::after {
+  content: "";
+  position: absolute;
+  height: 1px;
+  left: 10px;
+  right: 0;
+  bottom: 0;
+  background: #f5f5f5;
+}

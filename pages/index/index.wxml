@@ -1,0 +1,498 @@
+<view class="container">
+    <view class="wrap" style="">
+        <view class="heade" style="">
+            <view class="user-info flex-center" data-url="/pages/personalData/personalData" bindtap="link">
+                <view class="avatar" style="flex-shrink: 0">
+                    <image src="{{avatar||'../../assets/img/tx.png'}}" mode="aspectFill"/>
+                </view>
+                <view class="info" style="width: 70%;">
+                    <view class="top">
+                        <view class="name">{{name||''}}</view>
+                        <view class="time">({{boxData.edc||''}})</view>
+                    </view>
+                    <view class="bottom "
+                          style="width:96%;overflow: hidden;text-overflow: ellipsis; white-space: nowrap;display: inline-block;">
+                        <!--<view class="dcotor-name" >您的主治医师：{{boxData.doctor.realname || ''}}</view>-->
+                        <!--<view class="dcotor-address"  >{{boxData.doctor.city}} ({{boxData.doctor.hosname || ''}})</view>-->
+                        您的主治医师：{{boxData.doctor.realname || ''}} ({{boxData.doctor.hosname || ''}})
+
+                    </view>
+                </view>
+            </view>
+            <view class="module">
+                <view class="item" data-url="/pages/reports/reports" bindtap="link">
+                    <view class="yuan">
+                        <text class="iconfont icon-baogaochaxun"/>
+                    </view>
+                    <view class="title">营养处方</view>
+                     <view wx:if="{{boxData.report_number+boxData.calorie_guide_num>0}}" class="msg-i">{{boxData.report_number+boxData.calorie_guide_num}}</view> 
+                    <!-- <view class='msg-i'>8</view> -->
+                </view>
+                <view class="item" data-url="/pages/bodtData/bodyData" bindtap="link">
+                    <view class="yuan">
+                        <text class="iconfont icon-juxingceliang"/>
+                    </view>
+                    <view class="title">身体测量</view>
+                </view>
+                <view class="item" data-url="/pages/clock/clock" bindtap="link">
+                    <view class="yuan">
+                        <text class="iconfont icon-daqia"/>
+                    </view>
+                    <view class="title">每日打卡</view>
+                </view>
+                <view class="item msg" data-url="/pages/questions/questions" bindtap="link">
+                    <view class="yuan">
+                        <text class="iconfont">问</text>
+                    </view>
+                    <view class="title">专家答疑</view>
+                    <view wx:if="{{boxData.q_number>0}}" class="msg-i">{{boxData.q_number}}</view>
+                </view>
+            </view>
+
+            <view class="data-display">
+                <view class="top-title">
+                    <view class="text1">当前体重</view>
+                    <image src="../../assets/img/anwen@2x.png" mode=""/>
+                    <view class="text2">标准体重</view>
+                </view>
+                <view class="module-data">
+                    <view class="left">
+                        <view class="num-data"
+                              style="color:{{boxData.report.mother_weight_status!==3?'#6bce73':'#fa7070'}};">
+                            <view style="flex-shrink: 0"> {{boxData.report.estimated_present_mother_weight
+                                || '--'}}
+                            </view>
+                            <view class="company">kg</view>
+                        </view>
+                        <!-- <view class="character">妈妈</view> -->
+                    </view>
+                    <view class="sizmk">
+                        <view class="title"
+                              style="color:{{Integrated.motherStatus.color||'#6bce73'}}">
+                            {{Integrated.motherStatus.text ||'暂无'}}
+                        </view>
+                        <image src="{{Integrated.motherStatus.imgUrl || '../../assets/img/ljt@2x.png'}}"/>
+                        <!--<image wx:if="{{boxData.report.mother_weight_status===1||boxData.report.mother_weight_status===2}}" src="../../assets/img/hjt@2x.png"/>-->
+                        <!--<image wx:if="{{boxData.report.mother_weight_status==3}}" src="../../assets/img/ljt@2x.png"/>-->
+                        <!--<image wx:else src="../../assets/img/ljt@2x.png"/>-->
+                    </view>
+                    <view class="right">
+                        <view class="num-data"
+                              style="color:{{boxData.report.mother_weight_status!==3?'#6bce73':'#fa7070'}}">
+                            <view style="flex-shrink: 0">{{boxData.report.estimated_delivery_mother_weight || '--'}}
+                            </view>
+                            <view class="company">kg</view>
+                        </view>
+                        <!-- <view class="character">妈妈</view> -->
+                    </view>
+                </view>
+                <!--<view class="bottom-data">-->
+                <!--<view class="left">-->
+                <!--<view style="color:{{Integrated.fetusSatus.color||'#6bce73'}}"-->
+                <!--class="num-data">-->
+                <!--<view style="flex-shrink: 0">{{boxData.report.estimated_present_fetus_weight||'&#45;&#45;'}}</view>-->
+                <!--<view class="company">g</view>-->
+                <!--</view>-->
+                <!--<view class="character">胎儿</view>-->
+                <!--</view>-->
+                <!--<view class="sizmk">-->
+                <!--<view class="title"-->
+                <!--style="color:{{Integrated.fetusSatus.color||'#6bce73'}}">-->
+                <!--{{Integrated.fetusSatus.text || '暂无'}}-->
+                <!--</view>-->
+                <!--<image src="{{Integrated.fetusSatus.imgUrl || '../../assets/img/ljt@2x.png'}}"/>-->
+                <!--&lt;!&ndash;<image wx:if="{{boxData.report.fetus_weight_status==3}}" src="../../assets/img/ljt@2x.png"/>&ndash;&gt;-->
+                <!--&lt;!&ndash;<image wx:else src="../../assets/img/ljt@2x.png"/>&ndash;&gt;-->
+                <!--</view>-->
+                <!--<view class="right">-->
+                <!--<view style="color:{{Integrated.fetusSatus.color|| '#6bce73'}}"-->
+                <!--class="num-data">-->
+                <!--<view style="flex-shrink: 0">{{boxData.report.estimated_delivery_fetus_weight|| '&#45;&#45;'}}</view>-->
+                <!--<view class="company">g</view>-->
+                <!--</view>-->
+                <!--<view class="character">胎儿</view>-->
+                <!--</view>-->
+                <!--</view>-->
+            </view>
+
+        </view>
+    </view>
+    <view class="content">
+
+        <view class="bloodData examination" wx:if="{{blood_sugar}}">
+            <view class="heade">
+                <view class="left">
+                    <image src="../../assets/img/bloodSugar.png"/>
+                    <view class="title">血糖</view>
+                </view>
+                <view class="right">
+                    <view class="btn" data-url="/pages/bloodSugar/bloodSugar" bindtap="link">
+                        记录
+                    </view>
+                    <text class="iconfont icon-jiantou1"/>
+                </view>
+            </view>
+            <view class="bllodBox">
+                <view class="time-title">
+                    <view class="time-num">{{blood_sugar.measure_time.date||''}}  {{blood_sugar.measure_time.time||''}}</view>
+                    <view class="title">
+                        {{blood_sugar.text}} 血糖
+                    </view>
+                </view>
+
+                <view class="val-num">{{blood_sugar.blood_sugar||'----'}} <text> mmol/L</text> </view>
+
+                <view class="section column" wx:if="{{blood_sugar.type!==1&&blood_sugar.type!==7}}">
+                    <view class="location">
+                        <view class="item" >
+                            <text class="iconfont icon-dingwei" wx:if="{{blood_sugar.disease_desc==='合格'}}"></text>
+                        </view>
+                        <view class="item" >
+                            <text class="iconfont icon-dingwei" wx:if="{{blood_sugar.disease_desc==='不合格'}}"></text>
+                        </view>
+                    </view>
+                    <view class="block">
+                        <view class="item" style="background: #50C343;">
+                           {{' < 6.7'}}
+                        </view>
+                        <view class="item" style="background: red;">
+                           {{' > 6.7'}}
+                        </view>
+                    </view>
+                    <view class="text">
+                        <view class="item">合格</view>
+                        <view class="item">不合格</view>
+                    </view>
+                </view>
+                <view class="section column" wx:else>
+                    <view class="location">
+                        <view class="item" >
+                            <text class="iconfont icon-dingwei" wx:if="{{blood_sugar.disease_desc==='低'}}"></text>
+                        </view>
+                        <view class="item">
+                            <text class="iconfont icon-dingwei"  wx:if="{{blood_sugar.disease_desc==='正常'}}"></text>
+                        </view>
+                        <view class="item" >
+                            <text class="iconfont icon-dingwei" wx:if="{{blood_sugar.disease_desc==='高'}}"></text>
+                        </view>
+                    </view>
+                    <view class="block">
+                        <view class="item" style="background: #7DBEDD;">0~3.3</view>
+                        <view class="item" style="background: #50C343;">3.3~5.3</view>
+                        <view class="item" style="background: red;">>5.3</view>
+                    </view>
+                    <view class="text">
+                        <view class="item">低</view>
+                        <view class="item">正常</view>
+                        <view class="item">高</view>
+                    </view>
+                </view>
+
+
+                <view class="tip" wx:if="{{blood_sugar.disease_desc}}">您的血糖处于
+                    <text style="color:red">{{blood_sugar.disease_desc}}</text>
+                </view>
+            </view>
+        </view>
+        <view class="back-color">
+        </view>
+        <view class="bloodData examination" wx:if="{{blood_pressure}}">
+            <view class="heade">
+                <view class="left">
+                    <image src="../../assets/img/bloodPressure.png"/>
+                    <view class="title">血压</view>
+                </view>
+                <view class="right">
+                    <view class="btn" data-url="/pages/bloodPressure/bloodPressure" bindtap="link">
+                        记录
+                    </view>
+                    <text class="iconfont icon-jiantou1"/>
+                </view>
+            </view>
+            <view class="bllodBox">
+                <view class="time-title">
+                    <view class="time-num">{{blood_pressure.measure_time.date||'----'}} {{blood_pressure.measure_time.time||'----'}}</view>
+                  
+                </view>
+
+               <view class="mdbzdqsmm">
+              <view class='item'>
+                   <view class='val-num'>{{blood_pressure.systolic_pressure||'----'}}/{{blood_pressure.diastolic_pressure||'----'}}  <text>mmHg</text> </view>  
+              </view>
+              <view class="item">
+                        心率: {{blood_pressure.heart_rate||'--'}}次/分
+                    </view>
+
+
+
+
+             <!-- <view class='val-num'>{{blood_pressure.systolic_pressure||'----'}}/ {{blood_pressure.diastolic_pressure||'----'}}  <text>mmHg</text> </view>  -->
+                  <!-- <view class="item">
+                      <view class="title">舒张压：</view>
+                      <view class="val">{{blood_pressure.diastolic_pressure||'----'}} mmHg</view>
+                  </view>
+                   <view class="item">
+                       <view class="title">收缩压：</view>
+                       <view class="val">{{blood_pressure.systolic_pressure||'----'}} mmHg</view>
+                   </view> -->
+               </view>
+
+                <view class="section column">
+
+                    <view class="location">
+                        <view class="item">
+                            <text class="iconfont icon-dingwei" wx:if="{{blood_pressure.disease_desc==='低血压'}}"></text>
+                        </view>
+                        <view class="item">
+                            <text class="iconfont icon-dingwei" wx:if="{{blood_pressure.disease_desc==='正常'}}"></text>
+                        </view>
+                        <view class="item">
+                            <text class="iconfont icon-dingwei" wx:if="{{blood_pressure.disease_desc==='血压升高'}}"></text>
+                        </view>
+                        <view class="item">
+                            <text class="iconfont icon-dingwei" wx:if="{{blood_pressure.disease_desc==='高血压'}}"></text>
+                        </view>
+                    </view>
+                    <view class="block">
+                        <view class="item" style="background: #7DBEDD;"></view>
+                        <view class="item" style="background: #50C343;"></view>
+                        <view class="item" style="background: #FF9800;"></view>
+                        <view class="item" style="background: #E51C23;"></view>
+                    </view>
+                    <view class="text">
+                        <view class="item">低血压</view>
+                        <view class="item">正常</view>
+                        <view class="item">血压升高</view>
+                        <view class="item">高血压</view>
+                    </view>
+                </view>
+
+                <view class="tip" wx:if="{{blood_pressure.disease_desc}}">您的血压处于 <text style="color:red">{{blood_pressure.disease_desc}}</text></view>
+            </view>
+        </view>
+
+        <view class="back-color">
+        </view>
+        <view class="examination">
+            <view class="heade">
+                <view class="left">
+                    <image src="../../assets/img/t_styj@3x.png"/>
+                    <view class="title">身体检测</view>
+                </view>
+                <view class="right">
+                    <view class="text" wx:if="{{is_celiang==='Y'}}" data-url="/pages/bodtData/bodyData" bindtap="link">
+                        今日已测量
+                    </view>
+                    <view class="btn" wx:else if="{{is_celiang==='N'}}" data-url="/pages/bodtData/bodyData"
+                          bindtap="link">今日未测量
+                    </view>
+                    <text class="iconfont icon-jiantou1"/>
+                </view>
+            </view>
+            <view class="box">
+                <view class="item">
+                    <view class="title">体重</view>
+                    <view class="btn" style="background:#eef8ee;">{{boxData.measurement.weight|| '--'}}</view>
+                </view>
+                <view class="item">
+                    <view class="title">BMI</view>
+                    <view class="btn" style="background: #ede9f6">{{boxData.measurement.bmi|| '--'}}</view>
+                </view>
+                <view class="item">
+                    <view class="title">体脂率</view>
+                    <view class="btn" style="background: #e3eefb">{{boxData.measurement.bodyfatrate|| '--'}}</view>
+                </view>
+                <view class="item">
+                    <view class="title">基础代谢</view>
+                    <view class="btn" style="background: #fbeeeb">{{boxData.measurement.basalmetabolicrate|| '--'}}
+                    </view>
+                </view>
+            </view>
+
+            <view class="record" wx:if="{{boxData.report!==null}}">
+                <view class="left">
+                    <view class="num">{{boxData.report.mother_body_score||''}}</view>
+                    <view class="status">
+                        <view class="text">身体评分</view>
+                        <image src="../../assets/img/lxjt0@2x.png"/>
+                    </view>
+                </view>
+                <view class="right">
+                    <view class="concise">简评：{{boxData.report.mother_body_profile}}</view>
+                    <view class="time">
+                        <image src="../../assets/img/gx@2x.png"/>
+                        <view class="time-text">更新时间：{{boxData.measurement.date}}</view>
+                    </view>
+                </view>
+            </view>
+            <view class="back-color"></view>
+            <view class="early-warning" style="" wx:if="{{service_type!==0}}">
+                <view class="heade">
+                    <view class="left">
+                        <image src="../../assets/img/t_fxyj@2x.png"/>
+                        <view class="title">风险预警</view>
+                    </view>
+                    <view class="right">
+                        <view class="btn msg" data-url="/pages/reports/reports" bindtap="link">营养处方
+                            <view wx:if="{{boxData.report_number>0}}" class="msg-item">{{boxData.report_number}}</view>
+                        </view>
+                        <text class="iconfont icon-jiantou1"/>
+                    </view>
+                </view>
+                <view class="box">
+                    <view class="top">
+                        <view class="left-content">
+                            <image class="bk" src="../../assets/img/zuo1@2x.png"/>
+                            <view class="box_">
+                                <view class="title">
+                                    <view class="illness">妊娠糖尿病</view>
+                                    <view class="status" style="color:{{Integrated.gestational.color||'#6bce73'}}">
+                                        {{Integrated.gestational.text||'暂无风险'}}
+                                    </view>
+                                </view>
+                                <image class="img" wx:if="{{Integrated.gestational!==null}}"
+                                       src="{{Integrated.gestational.imgUrl || '../../assets/img/zhengchang@2x.png'}}"/>
+                                <image class="img" wx:else
+                                       src="../../assets/img/zhengchang@2x.png"/>
+                                <!--<image class="img"-->
+                                <!--src="../../assets/img/zhengchang@2x.png"/>-->
+                            </view>
+
+                        </view>
+                        <view class="right-content">
+                            <image class="bk" src="../../assets/img/you1@2x.png"/>
+                            <view class="box_">
+                                <view class="title">
+                                    <view class="illness">顺产率</view>
+                                    <view class="status" style="color:{{Integrated.eutocia.color||'#6bce73'}}">
+                                        {{Integrated.eutocia.text||'暂无风险'}}
+                                    </view>
+                                </view>
+                                <image class="img" wx:if="{{Integrated.eutocia!==null}}"
+                                       src="{{Integrated.eutocia.imgUrl || '../../assets/img/zhengchang@2x.png'}}"/>
+                                <image class="img" wx:else
+                                       src="../../assets/img/zhengchang@2x.png"/>
+                                <!--<image class="img"-->
+                                <!--src="{{Integrated.eutocia.imgUrl || '../../assets/img/zhengchang@2x.png'}}"/>-->
+                            </view>
+                        </view>
+                    </view>
+                    <view class="bottom">
+                        <view class="left-content">
+                            <image class="bk" src="../../assets/img/zuo1@2x.png"/>
+                            <view class="box_">
+                                <view class="title">
+                                    <view class="illness">孕期骨骼脆弱</view>
+                                    <view class="status" style="color:{{Integrated.skeletal.color ||'#6bce73'}}">
+                                        {{Integrated.skeletal.text||'暂无风险'}}
+                                    </view>
+                                </view>
+                                <image class="img" wx:if="{{Integrated.skeletal!==null}}"
+                                       src="{{Integrated.skeletal.imgUrl || '../../assets/img/zhengchang@2x.png'}}"/>
+                                <image class="img" wx:else
+                                       src="../../assets/img/zhengchang@2x.png"/>
+                            </view>
+                        </view>
+                        <view class="right-content">
+                            <image class="bk" src="../../assets/img/you1@2x.png"/>
+                            <view class="box_">
+                                <view class="title">
+                                    <view class="illness">巨大儿</view>
+                                    <view class="status" style="color:{{Integrated.giantBaby.color||'#6bce73'}}">
+                                        {{Integrated.giantBaby.text||'暂无风险'}}
+                                    </view>
+                                </view>
+                                <image class="img" wx:if="{{Integrated.giantBaby!==null}}"
+                                       src="{{Integrated.giantBaby.imgUrl || '../../assets/img/zhengchang@2x.png'}}"/>
+                                <image class="img" wx:else
+                                       src="../../assets/img/zhengchang@2x.png"/>
+                                <!--<image class="img"-->
+                                <!--src="{{Integrated.giantBaby.imgUrl || '../../assets/img/zhengchang@2x.png'}}"/>-->
+                            </view>
+                        </view>
+                    </view>
+                </view>
+
+            </view>
+
+            <view class="chart">
+                <ec-canvas id="mychart-dom-line" class="charts" canvas-id="mychart-line" ec="{{ ec }}"></ec-canvas>
+            </view>
+            <view class="wirte"></view>
+            <view class="back-color"></view>
+            <view class="dietary-records">
+                <view class="heade">
+                    <view class="left" >
+                        <image src="../../assets/img/t_ysjl@2x.png"/>
+                        <view class="title">饮食&运动记录</view>
+                    </view>
+                    <view class="right" data-url="/pages/clock/clock" bindtap="link">
+                        <view class="text" wx:if="{{boxData.food.length>0}}">'今日已打卡</view>
+                        <text class="iconfont icon-jiantou1"/>
+                    </view>
+                </view>
+                <view class="box_ column">
+                    <view class="top space-between">
+                        <view class="left column">
+                            <view class="title">建议摄入</view>
+                            <view class="shuju flex-center">
+                                <view class="num">{{boxData.report.englobement||'--'}}</view>
+                                <view class="danwei">千卡</view>
+                            </view>
+                        </view>
+                        <view class="right column" wx:if="{{boxData.food.carbohydrate}}">
+                            <view class="item flex-center">
+                                <view class="text  {{Integrated.carbohydrateUrl.class}}">碳水化合物</view>
+                                <view class="num">{{boxData.food.carbohydrate.value|| '--'}}克</view>
+                                <view class="status flex-center">
+                                    <image src="{{Integrated.carbohydrateUrl.url}}"></image>
+                                    <view class="prosus">{{boxData.food.carbohydrate.text|| '--'}}</view>
+                                </view>
+                            </view>
+                            <view class="item flex-center">
+                                <view class="text {{Integrated.fatUrl.class}}">脂肪</view>
+                                <view class="num">{{boxData.food.fat.value|| '--'}}克</view>
+                                <view class="status flex-center">
+                                    <image src="{{Integrated.fatUrl.url}}"></image>
+                                    <view class="prosus">{{boxData.food.fat.text|| '--'}}</view>
+                                </view>
+                            </view>
+                            <view class="item flex-center">
+                                <view class="text {{Integrated.proteinUrl.class}}">蛋白质</view>
+                                <view class="num">{{boxData.food.protein.value|| '--'}}克</view>
+                                <view class="status flex-center">
+                                    <image src="{{Integrated.proteinUrl.url}}"></image>
+                                    <view class="prosus">{{boxData.food.protein.text|| '--'}}</view>
+                                </view>
+                            </view>
+                        </view>
+
+                        <view wx:else class="right2 flex-center">
+                            <view class="text">今日还未打卡</view>
+                            <view class="btn" style="margin-right: 20rpx" data-url="/pages/clock/clock" bindtap="link">
+                                打卡
+                            </view>
+                        </view>
+                    </view>
+                    <view class="line space-between">
+                        <view class="line-item"></view>
+                        <view class="text">医生建议</view>
+                        <view class="line-item"></view>
+                    </view>
+                    <view class="proposal" style="text-align: left">
+                        <view class="tex t" style="padding-left: 36rpx">{{boxData.report.doctor_advice}}</view>
+                        <!--<view class="text">现在胎宝宝有20颗微小的牙黄正在牙龈肿行成，可能有的宝宝长牙后会出现一些牙齿问题，注意补钙</view>-->
+
+                        <!--<view class="text">每日多做运动，注意控制体重</view>-->
+                    </view>
+
+                </view>
+
+
+            </view>
+
+
+        </view>
+
+    </view>
+</view>

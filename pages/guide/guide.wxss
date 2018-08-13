@@ -1,0 +1,54 @@
+/* pages/guide/guide.wxss */
+.wrap{
+  margin-top: 20rpx;
+}
+.step-item{
+  width: 100%;
+  padding: 20rpx 30rpx;
+  height: 100rpx;
+}
+.step-item .text{
+  width: 570rpx;
+  font-size: 30rpx;
+  color: #333333;
+  margin-right: 30rpx;
+}
+.step-item .step-num{
+  margin-left: 50rpx;
+  width: 54rpx;
+  height: 54rpx;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 54rpx;
+  font-size: 30rpx;
+}
+.line{
+  position: relative;
+  /*background: #fff;*/
+  z-index: 100;
+}
+.line:after{
+  position: absolute;
+  content: '';
+  width: 4rpx;
+  height: 80rpx;
+  background: #dcdcdc;
+  bottom: -40rpx;
+  left: 110rpx;
+}
+.wrap .step-item:nth-child(1) .step-num{
+  color: #52b8f5;
+  border: solid 2px #52b8f5;
+}
+.wrap .step-item:nth-child(2) .step-num{
+  color: #aca3ff;
+  border: solid 2px #aca3ff;
+}
+.wrap .step-item:nth-child(3) .step-num{
+  color: #60d4e1;
+  border: solid 2px #60d4e1;
+}
+.wrap .step-item:nth-child(4) .step-num{
+  color: #52b8f5;
+  border: solid 2px #52b8f5;
+}

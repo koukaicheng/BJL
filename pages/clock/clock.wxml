@@ -1,0 +1,117 @@
+<!-- <view class="scale-mark-wrapper">
+
+</view> -->
+<view class="wrap {{!ischeck?'height':''}}">
+    <calendar selected="{{selected}}" bindselect="bindselect" bindgetdate="bindgetdate" />
+
+    <view wx:if="{{list.service_type != 0}}" class="content-wrapper">
+        <view class="content-top">
+            <view class="top-item top-left">
+                <view>食物摄入</view>
+                <view class="ele-top">
+                    <text class="font-50 color-333">{{list.food ==0 ? '--':list.food}}</text>
+                    <text>千卡</text>
+                </view>
+            </view>
+            <div class="circleProgress_wrapper">
+                <view class="circle">
+                    <canvas hidden="{{!ischeck}}" class="cir" style="width:126px; height:126px;" canvas-id="canvasArc">
+                    </canvas>
+                    <image hidden="{{ischeck}}" src="{{circleIamge}}"></image>
+                </view>
+                <view class="top-item top-center">
+                    <view>今天还可摄入</view>
+                    <view class="font-66 center-style">{{canUse}}</view>
+                    <view>千卡</view>
+                </view>
+            </div>
+            <view class="top-item top-left">
+                <view>运动消耗</view>
+                <view class="ele-top">
+                    <text class="font-50 color-333">{{list.motion==0?'--':list.motion}}</text>
+                    <text>千卡</text>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="list-wrapper">
+        <!--早餐  -->
+        <view wx:for="{{7}}" wx:key="list" class="list-box">
+            <view class='list-box-top' data-id="{{index+1}}" bindtap='add'>
+                <view class="list-box-item flex-sh icon">
+                    <text class="iconfont {{iconArr[index]}} color-blue font-50"></text>
+                </view>
+                <view class="list-box-item title">
+                    <view class="head-title">
+                        <block wx:if="{{index === 0}}">
+                            早餐
+                        </block>
+                        <block wx:elif="{{index === 1}}">
+                            早加餐
+                        </block>
+                        <block wx:elif="{{index === 2}}">
+                            午餐
+                        </block>
+                        <block wx:elif="{{index === 3}}">
+                            午加餐
+                        </block>
+                        <block wx:elif="{{index === 4}}">
+                            晚餐
+                        </block>
+                        <block wx:elif="{{index === 5}}">
+                            晚加餐
+                        </block>
+                        <block wx:elif="{{index === 6}}">
+                            运动
+                        </block>
+                    </view>
+                    <block wx:if="{{index === 6}}">
+                        <view wx:if="{{index%2 === 0}}" class="tuijian">保持健康的运动</view>
+                    </block>
+                    <block wx:else>
+                        <view wx:if="{{index%2 === 0}}" class="tuijian">推荐摄入{{list.list[index+1].tuijian== 0 ? '--':list.list[index+1].tuijian}}千卡</view>
+                    </block>
+
+                </view>
+                <view wx:if="{{list.list[index+1].food_list.length !==0}}" class="list-box-item flex-sh info a-flex-end">
+                    <text class="font-40 color-333">{{list.list[index+1].ingested== 0 ? '--':list.list[index+1].ingested}} </text>
+                    <text>大卡</text>
+                    <text class="iconfont icon-tianjia color-blue font-50"></text>
+                </view>
+                <view wx:else class="add">
+                    <block wx:if="{{!closeAdd}}">
+                        <text class="iconfont icon-tianjia color-blue font-50"></text>
+                    </block>
+                </view>
+            </view>
+            <!--已选择  -->
+            <view class="list-box-top list" wx:for="{{list.list[index+1].food_list}}" wx:key="food_list" wx:for-item="food" wx:for-index="fondIndex" data-id="{{index+1}}" data-food="{{food}}" bindtap='editFood'>
+                <view class="list-box-item flex-sh " data-id="{{food.id}}" catchtap="deleteFood">
+                    <text class="iconfont icon-shanchu2 color-999 font-50 color-red"></text>
+                </view>
+                <view class="list-box-item title">
+                    <text>{{index === 6?food.sport_event: food.food_name}}</text>
+                </view>
+                <view class="list-box-item flex-sh info">
+                    <text wx:if="{{food.type !== 3}}">{{food.total == 0 ? '--':food.total}}千卡</text>
+                    <text class="iconfont icon-jiantou1"></text>
+                </view>
+            </view>
+        </view>
+
+        <view class="list-box" bindtap="link">
+            <view class="list-box-top">
+                <view class="list-box-item flex-sh icon">
+                    <text class="iconfont icon-jiebantubiao- color-blue font-50"></text>
+                </view>
+                <view class="list-box-item title">
+                    <view class="head-title">指导</view>
+                    <view class="tuijian">每日指导</view>
+                </view>
+                <view class="add">
+                    <text class="iconfont icon-jiantou1 color-blue font-50"></text>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

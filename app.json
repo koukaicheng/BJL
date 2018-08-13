@@ -1,0 +1,30 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/bodtData/bodyData",
+        "pages/guide/guide",
+        "pages/clock/clock",
+        "pages/addCustomFood/addCustomFood",
+        "pages/addFood/addFood",
+        "pages/questions/questions",
+        "pages/Issue/Issue",
+        "pages/communication/communication",
+        "pages/personalData/personalData",
+        "pages/reports/reports",
+        "pages/reportsDetailds/reportsDetailds",
+        "pages/demo/demo",
+        "pages/photoDetail/photoDetail",
+        "pages/foodSearch/foodSearch",
+        "pages/register/register",
+        "pages/bloodPressure/bloodPressure",
+        "pages/bloodSugar/bloodSugar",
+        "pages/subBloodSugar/subBloodSugar",
+        "pages/subBloodPressure/subBloodPressure"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "WeChat",
+        "navigationBarTextStyle": "black"
+    }
+}

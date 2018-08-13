@@ -1,0 +1,125 @@
+<view wx:if="{{maskShow}}"  class="mark-wrapper" bindtap='closeMark'>
+    <view class="mark-box" catchtap='cleartap'>
+        <view class="mark-head">
+            <view class="mark-head-title">选择{{text}}</view>
+        </view>
+        <view class="mark-list">
+
+                <view class="mark-num">
+                    <text class="font-50 color-blue">{{scaVal}}</text> {{company}}</view>
+
+                <view class="mark-scale">
+                    <scale min="0" max="200" h="50" active="{{min}}" bindvalue="scaleValue" />
+                </view>
+                <view class="mark-button-group">
+                    <view class="color-333" data-id="0" bindtap='closeMark'>取消</view>
+                    <view class="color-blue" data-id="1" bindtap="submit">确定</view>
+                </view>
+        </view>
+    </view>
+</view>
+
+
+
+<view class="container">
+    <!--<scale min="60" max="200" h="50"   bindvalue="scaleValue" />-->
+    <view class="heade-title column" style="padding-top: 20rpx">
+      <view class="info">
+          主治医生：{{userInfo.doctor}}（{{userInfo.hospital|| ''}}）
+      </view>
+       <view class="space-between" style="width: 100%">
+           <view class="time">
+               服务截止时间：{{userInfo.service_end}}
+           </view>
+           <view class="close" wx:if="{{!off}}" bindtap="logout">退出</view>
+       </view>
+        <view class="info" style="color: #ffaf48;padding-top: 20rpx">请务必填写真实数据,否则将会影响您的测量数据</view>
+
+    </view>
+    <view class="wrap column">
+        <!--bindtap="avatar"-->
+        <view class="item first space-between bottomBorder" style="position: relative;">
+            <button class="getuserInfo" open-type="getUserInfo" bindgetuserinfo="avatar">
+                fdsfds
+            </button>
+            <view class="left flex-center">
+                <view class="text">头像</view>
+            </view>
+            <view class="right flex-center">
+                <view class="avatar">
+                    <image src='{{userInfo.avatar}}' mode="aspectFill"></image>
+                </view>
+            </view>
+        </view>
+        <view class="item space-between bottomBorder">
+            <view class="left flex-center">
+                <view class="text">名字</view>
+            </view>
+            <view class="right flex-center">
+              <!--<view class="input">Jimmy</view>-->
+                <input type="text" placeholder="姓名" bindinput="inputChenage" maxlength="10" value="{{userInfo.name}}" data-name='name'  />
+                <text style="opacity: 0;" class="iconfont icon-jiantou1"></text>
+
+            </view>
+        </view>
+        <picker mode="date" start="1960-01-01" end="2020-09-01" bindchange="birthday" data-name="birthday">
+        <view class="item space-between bottomBorder">
+            <view class="left flex-center">
+                <view class="text">生日</view>
+            </view>
+                <view class="right flex-center">
+                    <view class="input">{{userInfo.birthday || ''}}</view>
+                    <text class="iconfont icon-jiantou1"></text>
+                </view>
+        </view>
+        </picker>
+        <picker range="{{nation}}" bindchange="nation">
+            <view class="item space-between bottomBorder">
+                <view class="left flex-center">
+                    <view class="text">民族</view>
+                </view>
+                <view class="right flex-center">
+                    <view class="input">{{userInfo.nation}}</view>
+                    <text class="iconfont icon-jiantou1"></text>
+                </view>
+            </view>
+        </picker>
+        <view class="item space-between bottomBorder" data-name="height"  bindtap="currentName">
+            <view class="left flex-center">
+                <view class="text">身高</view>
+            </view>
+            <view class="right flex-center">
+                <view class="input">{{userInfo.height||0}}cm</view>
+                <text class="iconfont icon-jiantou1"></text>
+            </view>
+        </view>
+
+        <view class="item space-between bottomBorder" data-name="weight" bindtap="currentName">
+            <view class="left flex-center">
+                <view class="text">孕前体重</view>
+            </view>
+            <view class="right flex-center">
+                <view class="input">{{userInfo.weight_before||0}}kg</view>
+                <text class="iconfont icon-jiantou1"></text>
+            </view>
+        </view>
+        <picker  mode="date" start="{{newTime}}" end="2020-09-01" data-name="edc" bindchange="edc">
+            <view class="item space-between bottomBorder">
+                <view class="left flex-center">
+                    <view class="text">预产期</view>
+                </view>
+                <view class="right flex-center">
+                    <view class="input">{{userInfo.edc|| newTime}}</view>
+                    <text class="iconfont icon-jiantou1"></text>
+                </view>
+            </view>
+        </picker>
+
+
+        <view class="btn-box flex-center">
+            <view class="btn" bindtap="preservation">保存</view>
+        </view>
+    </view>
+
+</view>
+

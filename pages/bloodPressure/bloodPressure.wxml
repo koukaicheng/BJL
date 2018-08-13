@@ -1,0 +1,58 @@
+<view class="wrap">
+    <view class="header">
+        <view class="circle">
+            <view class="val" wx:if="{{last}}">{{last.diastolic_pressure}}/{{last.systolic_pressure}}</view>
+            <view class="val" wx:else>--</view>
+            <view class="text" wx:if="{{!last.diastolic_pressure}}">今日未记录</view>
+            <view class="text" wx:else>mmHg</view>
+        </view>
+
+        <view class="box" wx:if="{{last.point===1}}">
+            <view class="triangle_border_left">
+            </view>
+            <view class="text-box">
+                您的血压有所升高，请平静休息一小时后再次测量
+            </view>
+        </view>
+    </view>
+
+    <view class="btn" data-url="/pages/subBloodPressure/subBloodPressure" bindtap="link">记录血压</view>
+    <!--<view class="tipsss">一周趋势变化</view>-->
+    <!--<view class="chart" >-->
+        <!--<ec-canvas id="mychart-dom-line" class="charts" canvas-id="mychart-line" ec="{{ ec }}"></ec-canvas>-->
+    <!--</view>-->
+
+     <!-- <view class="guidance" >
+        <view class="text" wx:if="{{guide.guide}}">{{guide.guide}}</view>
+        <view class="text" wx:else>暂时没有指导意见</view>
+    </view>  -->
+
+
+    <view class="histroy">
+        <view class="title">历史记录</view>
+        <view class="box">
+            <view class="list" wx:for="{{list}}" wx:key="list">
+                <view class="status">
+                    <view class="time">
+                        <view class="year">{{item.measure_time.date}}</view>
+                        <view class="minute">{{item.measure_time.time}}</view>
+                    </view>
+                    <view class="zt" style="color:{{item.level_color.color}}">{{item.level_color.str}}</view>
+                </view>
+                <view class="data">
+                    <view class="left">
+                        <view class="text">舒张压 (低)</view>
+                        <view class="val">{{item.diastolic_pressure}}mmHg</view>
+                    </view>
+                    <view class="right">
+                        <view class="text">收缩压 (高)</view>
+                        <view class="val">{{item.systolic_pressure}}mmHg</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view wx:if="{{isLoadShow}}" class='loadding'>
+            <button loading="{{isLoad}}">{{isLoadTitle}}</button>
+        </view>
+    </view>
+</view>

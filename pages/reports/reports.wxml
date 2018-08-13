@@ -1,0 +1,48 @@
+<view class='tab-wrapper'>
+  <view class='tab-item {{isShowTab?"active":""}}' data-show='true' bindtap='tabFn'>每日指导  <text wx:if="{{calorie_guide_num>0}}"
+   class='msg'>{{calorie_guide_num}}</text> </view>
+  <view class='tab-item {{!isShowTab?"active":""}}' data-show='false' bindtap='tabFn'>管控报告 
+   <text class='msg'  wx:if="{{report_number>0}}">{{report_number}}</text>
+  </view>
+
+</view>
+
+<view wx:if="{{!isShowTab}}"  class="containe">
+    <view class='box'>
+     <view class='item bottomBorder ' wx:for="{{list}}" wx:key="id" data-id='{{item.id}}'  bindtap='details'>
+        <view class='left'>
+         <view class='time'>日期  {{item.check_time}} 
+            <view class='yuan' wx:if="{{item.is_read==0}}"></view>
+           </view>
+         <view class='reorts_no'> 报告编号: {{item.report_no}}</view>
+       
+         </view>
+
+         <view class='right'>
+            <text class='iconfont icon-jiantou1'></text>
+         </view>
+     </view>
+    </view>
+</view>
+
+
+
+
+
+
+<view wx:else class="container">
+  <scroll-view scroll-y style="height: 100%;">
+    <calendar selected="{{selected}}" bindselect="bindselect" bindgetdate="bindgetdate" />
+    <view class='guidance' wx:if="{{guidance&&guidance.length>0}}">
+      <view class='guidance-box'>
+        <view wx:for="{{guidance}}" wx:key="id" class='guidance-item'>{{item.guide}}</view>
+
+      </view>
+    </view>
+    <view class="statusText" wx:else>
+      <view class="text">
+        暂时没有每日指导
+      </view>
+    </view>
+  </scroll-view>
+</view>

@@ -1,0 +1,35 @@
+/* pages/addDault/addDault.wxss */
+.item{
+  height: 112rpx;
+  padding: 0 0rpx;
+  width: 694rpx;
+}
+.right {
+  color: #333333; 
+  font-size: 30rpx;
+}
+.item .right input{
+  text-align: right;
+  font-size: 30rpx;
+}
+.item .left .text{
+  font-size: 30rpx;
+  color: #333333;
+}
+.item .right .iconfont{
+  font-size: 40rpx;
+  color: #999999;
+}
+.btn-box{
+  margin-top: 115rpx;
+}
+.btn{
+  width: 478rpx;
+  height: 85rpx;
+  border-radius: 42rpx;
+  background-color: #52b8f5;
+  text-align: center;
+  line-height: 85rpx;
+  color: #fff;
+  font-size: 30rpx;
+}

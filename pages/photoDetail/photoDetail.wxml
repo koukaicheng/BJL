@@ -1,0 +1,10 @@
+<view class="wrap">
+    <view class="title"> 打卡详情：</view>
+    <view class='info'>
+    {{food.content}}
+    </view>
+    <view class="title"> 打卡图片：</view>
+    <view class='image' wx:for="{{food.images}}">
+        <image src='{{item}}' mode='aspectFill'></image>
+    </view>
+</view>

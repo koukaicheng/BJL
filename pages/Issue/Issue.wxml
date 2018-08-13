@@ -1,0 +1,35 @@
+
+
+<view class="container">
+  <view class="box">
+    <textarea placeholder="{{types?('描述您的'+isName+'状况'):'请尽量的描述您的问题，不少于15个字'}}" bindinput="off"></textarea>
+  </view>
+  <!-- <view class="upload">
+        <view class="upload-tap flex-center">
+            <text class="iconfont icon-tianjia"></text>
+        </view>
+        <view class="tip">上传照片(选填)</view>
+    </view> -->
+  <view class='warp image-warp'>
+    <view wx:if="{{imageData.length < 9}}" class='image-item' bindtap='chooseImage'>
+      <view class='add'>
+        <text class='iconfont icon-tianjia'></text>
+      </view>
+    </view>
+    <view class='image-item' wx:for="{{imageData}}" wx:key="index" data-image="{{item.url}}" bindtap='previewImage'>
+      <view class='add'>
+        <view hidden="{{item.num !== 100 &&item.num !== undefined}}" class='del' id='{{index}}' catchtap='delImage'>
+          <text class='iconfont icon-shanchu'></text>
+        </view>
+        <image src='{{item.url}}' mode='aspectFill'></image>
+        <view wx:if="{{item.num !== 100 &&item.num !== undefined}}" class='imageMask'>
+          上传中
+        </view>
+        <progress wx:if="{{item.num !== 100 &&item.num !== undefined}}" class='progress' active-mode='forwards' percent="{{item.num}}" active />
+      </view>
+    </view>
+  </view>
+  <view class="sub-btn flex-center" bindtap='save'> 
+    <view class="btn">{{types?"拍照打卡":"提交"}}</view>
+  </view>
+</view>

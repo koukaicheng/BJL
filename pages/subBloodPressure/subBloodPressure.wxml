@@ -1,0 +1,39 @@
+
+<view class="wrap">
+    <view class="form">
+        <view class="item bottomBorder">
+            <view class="title">舒张压(低)</view>
+            <input type="digit" placeholder="0" bindinput="binddiastolicPressure" />
+            <text>mmHg</text>
+        </view>
+        <view class="item bottomBorder">
+            <view class="title">收缩压(高)</view>
+            <input type="number" placeholder="0" bindinput="bindsystolicPressure" />
+            <text>mmHg</text>
+        </view>
+        <view class="item bottomBorder">
+            <view class="title">填写心率 <text style="color: #ddd;">(选填)</text> </view>
+            <input type="number" placeholder="0" bindinput="bindheartRate" />
+            <text>次/分</text>
+        </view>
+        <view class="item bottomBorder">
+            <view class="title">测量时间</view>
+
+            <view class="space-between">
+                <picker mode="date" value="{{date}}" start="date"  bindchange="bindData">
+                    <text>{{date}}</text>
+                </picker>
+                <picker mode="time" value="{{time}}" start="time" bindchange="bindTime">
+                    <text style="padding-left: 20rpx">{{time}}</text>
+                </picker>
+            </view>
+        </view>
+        <view class="item">
+            <view class="title">备注说明</view>
+            <textarea  placeholder=""  bindinput="bindRemarks" name="textarea"></textarea>
+        </view>
+    </view>
+
+
+    <view class="btn" bindtap="next">保存</view>
+</view>

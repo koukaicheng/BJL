@@ -1,0 +1,181 @@
+.wrap {
+    background: #fafafa;
+}
+
+.wrap.height {
+    height: 100vh;
+    overflow: hidden;
+    /* border: 1px red solid; */
+}
+
+.content-wrapper {
+    width: 100%;
+    /* height: 100%; */
+    font-size: 26rpx;
+    color: #999;
+    background: #fff;
+    line-height: 1;
+    border-top: 18rpx #fafafa solid;
+    /* border-bottom: 18rpx #fafafa solid; */
+    padding: 48rpx 0;
+}
+
+.content-top {
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.top-item {
+    width: 100%;
+    height: 200rpx;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.ele-top {
+    margin-top: 33rpx;
+}
+
+.font-66 {
+    font-size: 66rpx;
+}
+
+.top-center {
+    position: absolute;
+    top: 0rpx;
+    left: 0;
+    z-index: 2;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    box-sizing: border-box;
+    transform: scale(0.9);
+}
+
+.center-style {
+    color: #52b8f5;
+    margin-top: 17rpx;
+    margin-bottom: 15rpx;
+}
+
+.circle {
+    width: 126px;
+    height: 126px;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.circle image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.circleProgress_wrapper {
+    flex-shrink: 0;
+    display: flex;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.list-wrapper {
+    background: #fff;
+    font-size: 26rpx;
+    line-height: 1;
+    padding-top: 1rpx;
+    border-top: 18rpx #fafafa solid;
+}
+
+.list-box {
+    margin: 20rpx;
+    border-radius: 8rpx;
+    border: solid 1px #e2e2e2;
+}
+
+.list-box-top {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 20rpx 30rpx;
+    box-sizing: border-box;
+}
+.list-box-item.icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50rpx;
+    height: 50rpx;
+}
+.list-box-item.title {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    font-size: 24rpx;
+    color: #999;
+    padding-left: 30rpx;
+}
+
+.list-box-item.title .head-title {
+    font-size: 30rpx;
+    color: #333;
+}
+
+.list-box-item.title .tuijian {
+    padding-top: 20rpx;
+}
+
+.list-box-item.info {
+    display: flex;
+    align-items: center;
+    color: #999;
+    font-size: 24rpx;
+    /* border: 1px red solid; */
+}
+
+.list-box-item.info text:last-child {
+    margin-left: 10rpx;
+}
+
+.flex-sh {
+    flex-shrink: 0;
+}
+
+.list-box-top.list .title {
+    font-size: 26rpx;
+    color: #666;
+}
+
+.list-box-item.info .icon-jiantou1 {
+    /* padding: 0;  */
+    font-size: 32rpx;
+}
+
+.list-box-top .add {
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 30rpx;
+    align-items: center;
+    height: 100%;
+}
+
+.scale-mark-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 10001;
+}

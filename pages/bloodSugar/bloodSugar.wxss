@@ -1,0 +1,254 @@
+/* pages/bloodPressure/bloodPressure.wxss */
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20rpx;
+  position: relative;
+}
+
+.header .box {
+  position: absolute;
+  width: 220rpx;
+  min-height: 100rpx;
+  /*background: #c8c8c8;*/
+  right: 40rpx;
+  top: 24rpx;
+  display: flex;
+  align-items: center;
+}
+
+.header .text-box {
+  width: 200rpx;
+  background: #ff5858;
+  min-height: 100rpx;
+  right: 10rpx;
+  top: 24rpx;
+  border-radius: 12rpx;
+  font-size: 26rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 10rpx;
+}
+
+.triangle_border_left {
+  width: 0;
+  height: 0;
+  border-width: 20rpx 20rpx 20rpx 0;
+  border-style: solid;
+  border-color: transparent #ff5858 transparent transparent;
+}
+
+.header .circle {
+  width: 180rpx;
+  height: 180rpx;
+  border: 5rpx solid red;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.header .circle .val {
+  font-size: 35rpx;
+  color: red;
+}
+
+.header .circle .text {
+  margin-top: 20rpx;
+  font-size: 30rpx;
+}
+
+.btn {
+  font-size: 28rpx;
+  width: 180rpx;
+  height: 56rpx;
+  color: #fff;
+  background: rgb(87, 172, 244);
+  border-radius: 8rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 40rpx auto;
+}
+
+.chart {
+  /*padding-top: 20rpx;*/
+  position: relative;
+  width: 96vw;
+  height: 580rpx;
+  margin: 0rpx auto;
+  border: solid 1rpx #ddd;
+}
+
+.tipsss {
+  font-size: 30rpx;
+  color: #c8c8c8;
+  text-align: right;
+  padding-right: 16rpx;
+}
+
+.guidance {
+  height: 300rpx;
+  background: #f2f1f1;
+  margin: 50rpx 30rpx;
+}
+
+.guidance, text {
+  padding: 10rpx 20rpx;
+  font-size: 30rpx;
+  color: #230a12;
+}
+
+.histroy {
+  padding: 10rpx 0rpx;
+}
+
+.histroy .title {
+  font-size: 30rpx;
+  padding: 10rpx 20rpx;
+}
+
+.histroy .box {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.histroy .box .list {
+  font-size: 26rpx;
+  width: 96%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-top: 1rpx solid #ddd;
+}
+
+.histroy .box .list .status, .histroy .box .list .data {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.histroy .box .list .status {
+  padding: 20rpx 20rpx;
+}
+
+.histroy .box .list .status .newVal {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start ;
+  margin-left: 50rpx;
+}
+
+.histroy .box .list .status .newVal .val {
+  padding-left: 20rpx;
+}
+
+.histroy .box .list .status .time {
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22rpx;
+}
+
+.zt {
+display: flex;
+justify-content: flex-end;
+}
+
+.histroy .box .list .status .time .minute {
+  padding-left: 10rpx;
+}
+
+.histroy .box .list .data {
+  margin-top: 10rpx;
+}
+
+.histroy .box .list .data .left, .histroy .box .list .data .right {
+  display: flex;
+}
+
+.loadding button {
+  border: none;
+  border-radius: 0;
+  color: #ccc;
+  font-size: 28rpx;
+  line-height: 100rpx;
+}
+
+.loadding button::after {
+  border: none;
+  border-radius: 0;
+}
+
+.section {
+  margin: 10rpx 20rpx;
+}
+
+.section .location, .section .block, .section .text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 5rpx 0;
+}
+
+.section .location .item text {
+  font-size: 40rpx;
+  color: #e51c23;
+}
+
+.section .item {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.section .block .item {
+  height: 50rpx;
+}
+
+/*.section .block .item:nth-child(1){*/
+
+/*background: #7DBEDD;*/
+
+/*}*/
+
+/*.section .block .item:nth-child(2){*/
+
+/*background: #50C343;*/
+
+/*}*/
+
+/*.section .block .item:nth-child(3){*/
+
+/*background: #FF9800;*/
+
+/*}*/
+
+/*.section .block .item:nth-child(4){*/
+
+/*background: #E51C23;*/
+
+/*}*/
+
+.section .block .item {
+  color: #fff;
+  font-size: 28rpx;
+}
+
+.section .text .item {
+  padding-top: 4rpx;
+  font-size: 28rpx;
+}

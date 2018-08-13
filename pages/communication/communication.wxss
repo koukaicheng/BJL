@@ -1,0 +1,158 @@
+.container {
+    background: #fafafa;
+    box-sizing: border-box;
+}
+
+.wrap {
+    height: 100vh;
+    overflow-y: scroll;
+    padding-bottom: 120rpx;
+    box-sizing: border-box;
+}
+
+.proble-box {
+    /* background: #fff; *//* margin-bottom: 30rpx; */
+}
+
+.box {
+    border-bottom: 1rpx solid #d7d7d7;
+    box-sizing: border-box;
+}
+
+.nostyle {
+    border: 0;
+}
+
+.problem-item {
+    width: 100%;
+    padding: 26rpx 28rpx;
+    align-items: flex-start;
+    background: #fff;
+    margin: 30rpx 0;
+    box-sizing: border-box;
+}
+
+.problem-item .left {
+    padding-top: 16rpx;
+}
+
+.problem-item .left image {
+    width: 100rpx;
+    height: 100rpx;
+}
+
+.problem-item  .right {
+    width: 565rpx;
+    margin-left: 30rpx;
+}
+
+.problem-item .right .content {
+    min-height: 100rpx;
+    font-size: 30rpx;
+    color: #333;
+}
+
+.problem-item  .right .img {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    padding: -10rpx;
+}
+
+.image-group {
+    position: relative;
+    /* flex-grow: 1; */
+    width: 33.3%;
+    height: 0;
+    padding-top: 30%;
+}
+
+.image-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 5rpx;
+    box-sizing: border-box;
+}
+
+.image-item image {
+    width: 100%;
+    height: 100%;
+    border-radius: 10rpx;
+    overflow: hidden;
+}
+
+/* .problem-item  .right image {
+    width: 234rpx;
+    height: 148rpx;
+    background: #fafafa;
+    margin: 20rpx 20rpx 0rpx 0;
+} */
+
+.time {
+    color: #c0c0c0;
+    font-size: 24rpx;
+    padding-top: 16rpx;
+}
+
+.bck {
+    background: #fafafa;
+    height: 30rpx;
+}
+
+.reply {
+    padding: 0 28rpx;
+    color: #333;
+    font-size: 30rpx;
+    background: #fff;
+}
+
+.reply .title {
+     padding-top: 20rpx; 
+}
+
+.reply-title {
+    margin-top: 28rpx;
+    padding: 0 28rpx;
+    color: #52b8f5;
+    font-size: 30rpx;
+    /* height: 80rpx; */
+    padding-top: 28rpx;
+    background: #fff;
+}
+
+.reply .box .reply-item {
+    padding: 20rpx 0;
+    align-items: flex-start;
+}
+
+.reply .box .reply-item .text {
+    color: #666;
+}
+
+.reply .box .reply-item:last-child {
+    border: none;
+}
+
+.footer {
+    height: 120rpx;
+    background: #fff;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer .btn {
+    width: 158rpx;
+    height: 60rpx;
+    border-radius: 30rpx;
+    border: solid 1px #52b8f5;
+    color: #52b8f5;
+    font-size: 30rpx;
+    text-align: center;
+    line-height: 60rpx;
+    margin: 0 40rpx;
+    box-sizing: border-box;
+}

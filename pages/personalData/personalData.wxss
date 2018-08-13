@@ -1,0 +1,166 @@
+.mark-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  z-index: 12;
+  width: 100%;
+  height: 100vh;
+  box-sizing: border-box;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 0 76rpx;
+}
+
+.mark-box {
+  width: 100%;
+  background-color: #fff;
+  border-radius: 10rpx;
+}
+
+.mark-head {
+  position: relative;
+  text-align: center;
+  padding: 30rpx 0;
+  box-sizing: border-box;
+}
+
+.mark-head .icon-jiaochacross80 {
+  position: absolute;
+  top: 28rpx;
+  right: 28rpx;
+  font-size: 50rpx;
+  color: #999;
+}
+
+.mark-list {
+  /* padding: 0 24rpx; */
+  box-sizing: border-box;
+  font-size: 30rpx;
+  line-height: 1;
+}
+
+.mark-list .mark-head-title {
+  line-height: 1.5;
+  padding-left: 24rpx;
+}
+
+.mark-list-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 26rpx 24rpx;
+  border-top: 1px #dbdbdb solid;
+}
+
+.mark-num {
+  text-align: center;
+  margin-top: 45rpx;
+  margin-bottom: 35rpx;
+}
+
+.mark-scale {
+  padding: 0 24rpx;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.mark-button-group {
+  display: flex;
+  padding: 20rpx 0;
+  margin-top: 57rpx;
+  border-top: 1px #dbdbdb solid;
+}
+
+.mark-button-group  view {
+  width: 100%;
+  text-align: center;
+  font-size: 30rpx;
+  height: 57rpx;
+  line-height: 57rpx;
+}/* pages/communication/communication.wxss */
+
+
+
+
+.heade-title{
+  height: 140rpx;
+  background-color: #FAFAFA;
+  padding: 0 28rpx;
+  color: #333333;
+  font-size: 28rpx;
+  align-items: flex-start;
+}
+.heade-title .info{
+  padding-bottom: 10rpx ;
+}
+.item{
+  height: 112rpx;
+  padding: 0 0rpx;
+  width: 694rpx;
+}
+.getuserInfo{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+.first{
+  padding: 20rpx 0;
+}
+.item .right .avatar{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  background: #666666;
+}
+.item .right .avatar image{
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.item .right input{
+  text-align: right;
+  font-size: 30rpx;
+  color: #999999;
+  line-height: 30rpx;
+  padding-bottom: 8rpx;
+  padding-right: 16rpx;
+}
+.item .right .input{
+  text-align: right;
+  font-size: 30rpx;
+  color: #999999;
+  line-height: 30rpx;
+  padding-bottom: 8rpx;
+  padding-right: 16rpx;
+}
+.item .left .text{
+  font-size: 30rpx;
+  color: #333333;
+}
+.item .right .iconfont{
+  font-size: 30rpx;
+  color: #999999;
+}
+.btn-box{
+  margin-top: 115rpx;
+}
+.btn{
+  width: 478rpx;
+  height: 85rpx;
+  border-radius: 42rpx;
+  background-color: #52b8f5;
+  text-align: center;
+  line-height: 85rpx;
+  color: #fff;
+  font-size: 30rpx;
+}
+.close{
+  /*background: #787878;*/
+  /*padding: 8rpx 26rpx;*/
+  /*border-radius: 18rpx;*/
+  color: #787878;
+  text-decoration: underline;
+}

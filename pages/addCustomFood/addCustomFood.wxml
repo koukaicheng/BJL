@@ -1,0 +1,80 @@
+<view class="wrap column">
+    <block wx:if="{{types}}">
+        <view class="item space-between bottomBorder">
+            <view class="left flex-center">
+                <view class="text">食物名称</view>
+            </view>
+            <view class="right flex-center">
+                <input type="text" placeholder="输入食物名称" data-param="food_name" bindinput="getValue" />
+            </view>
+        </view>
+        <view class="item space-between bottomBorder">
+            <view class="left flex-center">
+                <view class="text">卡路里(千卡)</view>
+            </view>
+            <view class="right flex-center">
+                <input type="text" placeholder="输入食物热量" data-param="energy" bindinput="getValue" />
+            </view>
+        </view>
+        <view class="item space-between bottomBorder">
+            <view class="left flex-center">
+                <view class="text">数量</view>
+            </view>
+            <view class="right flex-center">
+                <input type="text" placeholder="输入数量" data-param="number" bindinput="getValue" />
+            </view>
+        </view>
+        <picker mode="selector" bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+            <view class="item space-between bottomBorder">
+                <view class="left flex-center">
+                    <view class="text">单位</view>
+                </view>
+                <view class="right flex-center">
+                    <text>{{strName}}</text>
+                    <text class="iconfont icon-jiantou1"></text>
+                </view>
+            </view>
+        </picker>
+    </block>
+    <block wx:else>
+        <view class="item space-between bottomBorder">
+            <view class="left flex-center">
+                <view class="text">运动项目</view>
+            </view>
+            <view class="right flex-center">
+                <input type="text" placeholder="输入运动名称" data-param="sport_event" bindinput="getValue" />
+            </view>
+        </view>
+        <view class="item space-between bottomBorder">
+            <view class="left flex-center">
+                <view class="text">消耗能量(千卡/小时)</view>
+            </view>
+            <view class="right flex-center">
+                <input type="text" placeholder="输入消耗能量" data-param="energy" bindinput="getValue" />
+            </view>
+        </view>
+        <view class="item space-between bottomBorder">
+            <view class="left flex-center">
+                <view class="text">数量</view>
+            </view>
+            <view class="right flex-center">
+                <input type="text" placeholder="输入数量" data-param="number" bindinput="getValue" />
+            </view>
+        </view>
+        <picker mode="selector" bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+            <view class="item space-between bottomBorder">
+                <view class="left flex-center">
+                    <view class="text">单位</view>
+                </view>
+                <view class="right flex-center">
+                    <text>{{strName}}</text>
+                    <text class="iconfont icon-jiantou1"></text>
+                </view>
+            </view>
+        </picker>
+    </block>
+
+    <view class="btn-box flex-center" bindtap="sumbit">
+        <view class="btn">确定</view>
+    </view>
+</view>

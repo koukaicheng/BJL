@@ -1,0 +1,38 @@
+<view class="container">
+    <view class="box">
+        <view class="wrap">
+            <view class="proble-box">
+                <view wx:if="{{list.length !== 0}}" class="problem-item bottomBorder space-between" wx:for="{{list}}" wx:key="list" data-id="{{item.id}}" bindtap='questionsDetail'>
+                    <view class="left">
+                        <image src="{{item.avatar}}"></image>
+                    </view>
+                    <view class="right">
+                        <view class="content">
+                            {{item.content}}
+                        </view>
+                        <view class="tip space-between">
+                            <view class="time">{{item.create_time}}</view>
+                            <view class="status">{{item.is_solve}}</view>
+                        </view>
+                    </view>
+                </view>
+                <view wx:if="{{list.length === 0}}" class='nodata'>
+                    <view>您还没有提问过</view>
+                    <view>您有什么问题，可以向专家提问哦</view>
+                    <view>我们会在24小时之内回复您</view>
+
+                </view>
+
+            </view>
+
+        </view>
+        <view wx:if="{{isLoadShow}}" class='loadding'>
+            <button loading="{{isLoad}}">{{isLoadTitle}}</button>
+        </view>
+    </view>
+</view>
+<view class="footer" bindtap='putQuestions'>
+    <view class="btn">
+        我要提问
+    </view>
+</view>

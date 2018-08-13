@@ -1,0 +1,270 @@
+<view class="container">
+    <view class="header bottomBorder flex-center">
+        <view class="tab-item {{tabIndex==='0'?'active': ''}}}" data-index="0" bindtap="tab">检测</view>
+        <view class="tab-item {{tabIndex==='1'?'active': ''}}}" data-index="1" bindtap="tab">趋势</view>
+    </view>
+    <view class="box">
+        <view class="wrap">
+            <view class="tab-box1" hidden="{{tabIndex==='1'}}">
+                <view class="box_top">
+                    <view class="tab-box1-tip flex-center" bindtap="init" data-status="{{creatBlueStatus}}">
+                        <text class="iconfont icon-lanya"></text>
+                        <view class="text">
+                            {{tip}}
+                        </view>
+                    </view>
+                    <view class="weight column">
+                        <image src="../../assets/img/huan@2x.png"></image>
+                        <view class="title">体重</view>
+                        <view class="data flex-center">
+                            <view class="num">{{lastDatas.weight.value|| '--'}}</view>
+                            <view class="danwei">kg</view>
+                        </view>
+                        <view class="time-tip">{{jc_time|| ''}}</view>
+                    </view>
+                    <view class="link" data-url="/pages/guide/guide" bindtap="link">设备连接指南</view>
+                    <view class="bk">
+                        <image src="../../assets/img/dataBk.png"></image>
+                    </view>
+                </view>
+                <view class="content">
+                    <view class="item space-between bottomBorder">
+                        <view class="left-content flex-center">
+                            <view class="iconfont icon-tizhishuai"></view>
+                            <view class="title">体脂率</view>
+                            <view class="num">{{lastDatas.bodyfatrate.value|| '--'}}%</view>
+                            <!--<view class="section">健康：18~32</view>-->
+                        </view>
+                        <view class="status" style="color:{{lastDatas.bodyfatrate.colour}}">
+                            {{lastDatas.bodyfatrate.text||''}}
+                        </view>
+                    </view>
+                    <!--<view class="item space-between bottomBorder">-->
+                    <!--<view class="left-content flex-center">-->
+                    <!--<view class="iconfont icon-tizhong1"></view>-->
+                    <!--<view class="title">躯干体脂肪</view>-->
+                    <!--<view class="num">{{lastDatas.bfmt.value|| '--'}}kg</view>-->
+                    <!--<view class="section">健康：60~80</view>-->
+                    <!--</view>-->
+                    <!--<view class="status" style="color:{{lastDatas.bfmt.colour}}">{{lastDatas.bfmt.text||''}}</view>-->
+                    <!--</view>-->
+                    <!--<view class="item space-between bottomBorder">-->
+                    <!--<view class="left-content flex-center">-->
+                    <!--<view class="iconfont icon-tizhong1"></view>-->
+                    <!--<view class="title">体重</view>-->
+                    <!--<view class="num">{{lastDatas.weight.value|| '--'}}kg</view>-->
+                    <!--<view class="section">健康：60~80</view>-->
+                    <!--</view>-->
+                    <!--<view class="status" style="color:{{lastDatas.weight.colour}}">{{lastDatas.weight.text||''}}</view>-->
+                    <!--</view>-->
+                    <view class="item space-between bottomBorder">
+                        <view class="left-content flex-center">
+                            <view class="iconfont icon-BMI"></view>
+                            <view class="title">BMI</view>
+                            <view class="num">{{lastDatas.bmi.value|| '--'}}</view>
+                            <!--<view class="section">健康：11~29</view>-->
+                        </view>
+                        <view class="status" style="color:{{lastDatas.bmi.colour}}">{{lastDatas.bmi.text||''}}</view>
+                    </view>
+                    <view class="item space-between bottomBorder">
+                        <view class="left-content flex-center">
+                            <view class="iconfont icon-yasuiganxibao"></view>
+                            <view class="title">基础代谢率</view>
+                            <view class="num">{{lastDatas.basalmetabolicrate.value|| '--'}}kcal</view>
+                            <!--<view class="section">健康：1090~1250</view>-->
+                        </view>
+                        <view class="status" style="color:{{lastDatas.basalmetabolicrate.colour}}">
+                            {{lastDatas.basalmetabolicrate.text||''}}
+                        </view>
+                    </view>
+                    <view class="item space-between bottomBorder">
+                        <view class="left-content flex-center">
+                            <view class="iconfont icon-jirou"></view>
+                            <view class="title">肌肉量</view>
+                            <view class="num">{{lastDatas.musclemass.value|| '--'}}kg</view>
+                            <!--<view class="section">健康：25~34.2</view>-->
+                        </view>
+                        <view class="status" style="color:{{lastDatas.musclemass.colour}}">
+                            {{lastDatas.musclemass.text||''}}
+                        </view>
+                    </view>
+                    <view class="item space-between bottomBorder">
+                        <view class="left-content flex-center">
+                            <view class="iconfont icon-ic_neizangzhifang"></view>
+                            <view class="title">内脏脂肪</view>
+                            <view class="num">{{lastDatas.visceralfatindex.value|| '--'}}</view>
+                            <!--<view class="section">健康：10~15</view>-->
+                        </view>
+                        <view class="status" style="color:{{lastDatas.visceralfatindex.colour}}">
+                            {{lastDatas.visceralfatindex.text||''}}
+                        </view>
+                    </view>
+                    <view class="item space-between bottomBorder">
+                        <view class="left-content flex-center">
+                            <view class="iconfont icon-ic_danbaizhi"></view>
+                            <view class="title">蛋白质</view>
+                            <view class="num">{{lastDatas.protein.value||'--'}}kg</view>
+                            <!--<view class="section">健康：5.4~7.5</view>-->
+                        </view>
+                        <view class="status" style="color:{{lastDatas.protein.colour}}">{{lastDatas.protein.text||''}}
+                        </view>
+                    </view>
+                    <view class="item space-between bottomBorder">
+                        <view class="left-content flex-center">
+                            <view class="iconfont icon-shujuguanlisvg79"></view>
+                            <view class="title">水分率</view>
+                            <view class="num">{{lastDatas.watercontentrate.value|| '--'}}%</view>
+                            <!--<view class="section">健康：40.7~60</view>-->
+                        </view>
+                        <view class="status" style="color:{{lastDatas.watercontentrate.colour}}">
+                            {{lastDatas.watercontentrate.text||''}}
+                        </view>
+                    </view>
+                    <view class="item space-between bottomBorder">
+                        <view class="left-content flex-center">
+                            <view class="iconfont icon-icon-test"></view>
+                            <view class="title">骨量</view>
+                            <view class="num">{{lastDatas.bonemass.value|| '--'}}kg</view>
+                            <!--<view class="section">健康：2.2~2.7</view>-->
+                        </view>
+                        <view class="status" style="color:{{lastDatas.bonemass.colour}}">
+                            {{lastDatas.bonemass.text||''}}
+                        </view>
+                    </view>
+                    <!--<view class="item space-between bottomBorder">-->
+                    <!--<view class="left-content flex-center">-->
+                    <!--<view class="iconfont icon-dianzicheng"></view>-->
+                    <!--<view class="title">胎重预估</view>-->
+                    <!--<view class="num">21.1%</view>-->
+                    <!--<view class="section">健康：137.5~550.0</view>-->
+                    <!--</view>-->
+                    <!--<view class="status">正常</view>-->
+                    <!--</view>-->
+                </view>
+            </view>
+            <view class="tab-box2" hidden="{{tabIndex==='0'}}">
+                <view class="top-box">
+                    <image src="../../assets/img/dataBk.png"></image>
+                </view>
+                <view class="btn-box flex-center">
+                    <view class="btn-item {{chartsIndex=='day'?'active':''}}" bindtap="chartsIndex" data-name="day">
+                        近一周
+                    </view>
+                    <view class="btn-item {{chartsIndex=='month'?'active':''}}" bindtap="chartsIndex" data-name="month">
+                        近一月
+                    </view>
+                    <view class="btn-item {{chartsIndex=='whole'?'active':''}}" bindtap="chartsIndex" data-name="whole">
+                        全孕期内
+                    </view>
+                </view>
+                <view class="company">
+                    单位: {{company}}
+                </view>
+
+                <view class="charts">
+                    <ec-canvas id="mychart-dom-line" canvas-id="mychart-line" ec="{{ ec }}"></ec-canvas>
+                </view>
+                <view class="footer" hidden="{{tabIndex==='0'}}">
+                    <scroll-view class="footer-scroll flex-center" scroll-x="true">
+                        <view class="footer-item column {{chartsItemText=='weight'?'active':''}}" data-name="weight"
+                              bindtap="chartsChange">
+                            <text class="iconfont icon-tizhong1"></text>
+                            <view class="text">体重</view>
+                        </view>
+                        <view class="footer-item column {{chartsItemText=='bodyfat'?'active':''}}" data-name="bodyfat"
+                              bindtap="chartsChange">
+                            <text class="iconfont icon-tizhishuai"></text>
+                            <view class="text">体脂</view>
+                        </view>
+                        <view class="footer-item column {{chartsItemText=='musclemass'?'active':''}}"
+                              data-name="musclemass" bindtap="chartsChange">
+                            <text class="iconfont icon-yundong"></text>
+                            <view class="text">肌肉</view>
+                        </view>
+                        <view class="footer-item column {{chartsItemText=='watercontent'?'active':''}}"
+                              data-name="watercontent" bindtap="chartsChange">
+                            <text class="iconfont icon-shuijin"></text>
+                            <view class="text">身体水分</view>
+                        </view>
+                        <!-- <view class="footer-item column {{chartsItemText=='bmi'?'active':''}}" data-name="bmi"
+                              bindtap="chartsChange">
+                            <text class="iconfont icon-BMI"></text>
+                            <view class="text">BMI</view>
+                        </view> -->
+                        <view class="footer-item column {{chartsItemText=='bodyfatrate'?'active':''}}"
+                              data-name="bodyfatrate" bindtap="chartsChange">
+                            <text class="iconfont icon-tizhishuai"></text>
+                            <view class="text">体脂率</view>
+                        </view>
+                        <view class="footer-item column {{chartsItemText=='basalmetabolicrate'?'active':''}}"
+                              data-name="basalmetabolicrate" bindtap="chartsChange">
+                            <text class="iconfont icon-yasuiganxibao"></text>
+                            <view class="text">基础代谢</view>
+                        </view>
+                        <view class="footer-item column {{chartsItemText=='fatfreemass'?'active':''}}"
+                              data-name="fatfreemass" bindtap="chartsChange">
+                            <text class="iconfont icon-tizhong1"></text>
+                            <view class="text">去脂体重</view>
+                        </view>
+                        <view class="footer-item column {{chartsItemText=='visceralfatindex'?'active':''}}"
+                              data-name="visceralfatindex" bindtap="chartsChange">
+                            <text class="iconfont icon-ic_neizangzhifang"></text>
+                            <view class="text">内脏脂肪</view>
+                        </view>
+                        <view class="footer-item column {{chartsItemText=='protein'?'active':''}}" data-name="protein"
+                              bindtap="chartsChange">
+                            <text class="iconfont icon-ic_danbaizhi"></text>
+                            <view class="text">蛋白质</view>
+                        </view>
+                        <view class="footer-item column {{chartsItemText=='bonemass'?'active':''}}" data-name="bonemass"
+                              bindtap="chartsChange">
+                            <text class="iconfont icon-icon-test"></text>
+                            <view class="text">骨量</view>
+                        </view>
+                        <view class="footer-item column {{chartsItemText=='watercontentrate'?'active':''}}"
+                              data-name="watercontentrate" bindtap="chartsChange">
+                            <text class="iconfont icon-shujuguanlisvg79"></text>
+                            <view class="text">水分率</view>
+                        </view>
+                        <!--<view class="footer-item column">-->
+                        <!--<text class="iconfont icon-dianzicheng"></text>-->
+                        <!--<view class="text">胎重预估</view>-->
+                        <!--</view>-->
+
+                    </scroll-view>
+                </view>
+            </view>
+        </view>
+    </view>
+
+</view>
+
+<view class="msk" hidden="{{off}}">
+    <!--<view class="msk">-->
+    <view class="module">
+        <view class="heade bottomBorder flex-center">
+            <view class="text">点击连接设备</view>
+            <view class="text"></view>
+            <text class="iconfont icon-jiaochacross80" bindtap="close"></text>
+        </view>
+        <view class="li_ flex-center" bindtap="createBLEC" wx:for="{{services}}" wx:key="*this"
+              data-name="{{item.name=='未知设备'?'SHHC':item.name}}" data-deviceId="{{item.deviceId}}">
+            <text class="iconfont icon-lanya1 " ></text>
+            <view class="text">{{item.name=='未知设备'?'SHHC':'SHHC'}}</view>
+        </view>
+        <!--<view class="li_ flex-center" >-->
+            <!--<text class="iconfont icon-lanya1 " ></text>-->
+            <!--<view class="text">HHHHH</view>-->
+        <!--</view>-->
+    </view>
+</view>
+
+<view class="msk" hidden="{{loading}}">
+    <!--<view class="msk">-->
+    <view class="loading">
+        <!-- <view class="text">连接中....</view> -->
+        <image src="../../assets/img/loading3.gif" alt=""></image>
+    </view>
+</view>
+
+

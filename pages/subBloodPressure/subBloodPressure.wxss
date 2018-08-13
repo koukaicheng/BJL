@@ -1,0 +1,52 @@
+/* pages/subBloodPressure//* pages/subBloodSugar/subBloodSugar.wxss */
+page{
+    background: #F9F8F8;
+}
+.form .item{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 30rpx;
+    padding: 20rpx 20rpx;
+    border-radius: 10rpx;
+}
+.form .item input{
+    text-align: right;
+    flex: 1;
+    padding-right: 20rpx;
+}
+.form .item:nth-child(1){
+    justify-content:center;
+}
+.form{
+    margin: 30rpx 50rpx;
+    background: #fff;
+}
+.form .item .left .iconfont{
+    color: #979797;
+    font-size: 30rpx;
+    padding-left: 20rpx;
+}
+.form .item .title{
+    flex-shrink: 0;
+}
+.form .item textarea{
+   height: 180rpx;
+    text-indent: 20rpx;
+    padding-top: 8rpx;
+    width: 450rpx;
+}
+.form .item:last-child{
+    align-items: flex-start;
+}
+
+.btn{
+    width: 460rpx;
+     background: #BD081C;
+    padding: 15rpx 0;
+    border-radius: 10rpx;
+    text-align: center;
+    margin: 50rpx auto;
+    font-size: 30rpx;
+    color: #ccc;
+}

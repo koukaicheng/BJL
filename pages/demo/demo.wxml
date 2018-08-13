@@ -1,0 +1,12 @@
+<view class="wrap">
+   <view class="list">
+       <view class="li_ bottomBorder">
+           <view class="title">设备名字</view>
+           <view class="deviceId">设备id</view>
+       </view>
+   </view>
+    <button bindtap="close">关闭</button>
+    <button bindtap="kkc">接受</button>
+    <input type="text" bindinput="sunmit"/>
+    <button bindtap="writeBLECharacteristicValue">发送</button>
+</view>

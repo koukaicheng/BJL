@@ -1,0 +1,117 @@
+<!-- 遮罩层  -->
+<view wx:if="{{maskShow}}" class="mark-wrapper" bindtap='closeMark'>
+    <view class="mark-box" catchtap='cleartap'>
+        <view class="mark-head">
+            <view class="mark-head-title">{{detailShow?detailLIst.food_name:time+"/"+eatName}}</view>
+            <block wx:if="{{detailShow}}">
+                <view class="mark-head-title color-666 font-30">{{detailLIst.energy}}kcal</view>
+                <view class="mark-head-title color-999 font-24">每100克食部热量</view>
+                <text class="iconfont icon-jiaochacross80" catchtap='closeMark'></text>
+            </block>
+        </view>
+        <view class="mark-list">
+            <block wx:if="{{detailShow}}">
+                <view class="mark-list-item">
+                    <text class="color-333">蛋白质</text>
+                    <text class="color-999">{{detailLIst.protein}}g</text>
+                </view>
+                <view class="mark-list-item">
+                    <text class="color-333">脂肪</text>
+                    <text class="color-999">{{detailLIst.fat}}g</text>
+                </view>
+                <view class="mark-list-item">
+                    <text class="color-333">碳水化合物</text>
+                    <text class="color-999">{{detailLIst.carbohydrate}}g</text>
+                </view>
+                <view class="mark-list-item">
+                    <text class="color-333">叶酸</text>
+                    <text class="color-999">{{detailLIst.folic_acid}}ug</text>
+                </view>
+                <view class="mark-list-item">
+                    <text class="color-333">钙</text>
+                    <text class="color-999">{{detailLIst.calcium}}mg</text>
+                </view>
+                <view class="mark-list-item">
+                    <text class="color-333">铁</text>
+                    <text class="color-999">{{detailLIst.iron}}mg</text>
+                </view>
+                <view class="mark-list-item">
+                    <text class="color-333">锌</text>
+                    <text class="color-999">{{detailLIst.zinc}}mg</text>
+                </view>
+            </block>
+            <block wx:else>
+                <view class="mark-head-title color-666 font-30">{{customListType=== 'motion'?detailLIst.sport_event:detailLIst.food_name}}</view>
+                <view wx:if="{{category === '7'}}" class="mark-head-title color-999 font-24">{{detailLIst.energy}}kcal/{{detailLIst.number+detailLIst.unit}}</view>
+                <view wx:if="{{category !== '7'}}" class="mark-head-title color-999 font-24">
+                    {{detailLIst.energy}}kcal/{{detailLIst.number?detailLIst.number+detailLIst.unit:'每'+number+detailLIst.unit+'食部热量'}}
+                </view>
+                <view class="mark-num">
+                    <text class="font-50 color-blue">{{scaValLcil}}</text> 千卡</view>
+                <view class="mark-num">
+                    <text class="font-50 color-blue">{{scaVal}}</text> {{detailLIst.unit}}</view>
+                <view class="mark-scale">
+                    <scale h="50" max="{{max}}" int="{{ints}}" step="{{step}}" active="{{scaleActive}}" data-energy="{{detailLIst.energy}}" data-number="{{detailLIst.number}}" bindvalue="scaleValue" />
+                </view>
+                <view class="mark-button-group">
+                    <view class="color-333" data-id="0" bindtap='closeMark'>取消</view>
+                    <view class="color-blue" data-id="{{detailLIst.id}}" bindtap="submit">确定</view>
+                </view>
+            </block>
+        </view>
+    </view>
+</view>
+<view class="container {{height?'height':''}}">
+    <view wx:if="{{customListType === 'food'}}" class="header flex-center">
+        <view class="search" bindtap='searchFn'>
+            <text class="iconfont icon-iconss"></text>
+            <view>请输入食物名称</view>
+        </view>
+    </view>
+    <view class="tab bottomBorder" style="top:{{customListType === 'food'?'107rpx':'0'}}">
+        <scroll-view class="footer-scroll flex-center" scroll-x="true">
+            <view class="tab-item {{tabIndex === '0'?'active':''}}" data-index="0" bindtap='tab'>
+                自定义
+            </view>
+            <view wx:if="{{category === '7'}}" data-index="1" data-code="" class="tab-item {{tabIndex === '1'?'active':''}}" bindtap='tab'>运动</view>
+            <view wx:if="{{category !== '7'}}" wx:for="{{list_type}}" data-index="{{index+1}}" wx:key="list_type" data-code="{{item.type_code}}" class="tab-item {{tabIndex === (index+1)?'active':''}}" bindtap='tab'>{{item.type_name}}</view>
+        </scroll-view>
+    </view>
+    <view class="box {{height?'height':''}}"  style="padding-top:{{customListType === 'food'?'180rpx':'73rpx'}}">
+        <view class="wrap">
+            <view class="box-item">
+                <view wx:if="{{tabIndex === '0'}}" class='add-custom-food' data-type="{{customListType}}" bindtap='tapcustom'>
+                    <text class="iconfont icon-jiahao2"></text>
+                    <text>{{customListType=== 'motion'?'添加自定义运动':'添加自定义食物'}}</text>
+                </view>
+                <view class="food-item space-between bottomBorder" wx:for="{{customList}}" wx:key="customList" data-detail="{{item}}" bindtap="detail">
+                    <view class="left column">
+                        <view class="title">{{customListType=== 'motion'?item.sport_event:item.food_name}}</view>
+                        <view wx:if="{{category === '7'}}" class="company">{{item.energy}}千卡/{{item.number+item.unit}}</view>
+                        <view wx:if="{{category !== '7'}}" class="company">{{item.energy}}千卡/{{item.number?item.number+item.unit:'100克'}}</view>
+
+                    </view>
+                    <block wx:if="{{tabIndex === '0'}}">
+                        <view class="right del" data-type="add" data-id="{{item.id}}" data-detail="{{item}}" catchtap='delFood'>
+                            <text class="iconfont icon-shanchu"></text>
+                        </view>
+                    </block>
+                    <block wx:else>
+                        <view class="right" data-type="add" data-detail="{{item}}" catchtap='addFood'>
+                            <text class="iconfont icon-jiahao2"></text>
+                        </view>
+                    </block>
+                </view>
+            </view>
+            <view wx:if="{{isLoadShow}}" class='loadding'>
+                <button loading="{{isLoad}}">{{isLoadTitle}}</button>
+            </view>
+        </view>
+    </view>
+    <view wx-if="{{category !== '7'}}" class="footer flex-center " bindtap='photo'>
+        <view class="footer-box flex-center">
+            <text class="iconfont icon-xiangji"></text>
+            <view class="text">拍照记录</view>
+        </view>
+    </view>
+</view>

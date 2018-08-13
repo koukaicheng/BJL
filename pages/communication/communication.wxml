@@ -1,0 +1,50 @@
+<view class="container">
+    <view class="wrap">
+        <view class="proble-box" wx:for="{{list}}" wx:key="list" wx:for-index="listIndex">
+            <block wx:if="{{item.ruid === 0}}">
+                <view class="problem-item  space-between">
+                    <view class="left">
+                        <image src="{{item.avatar}}"></image>
+                    </view>
+                    <view class="right">
+                        <view class="content">
+                            {{item.content}}
+                        </view>
+                        <view class="img flex-center">
+                            <view class="image-group" wx:for="{{item.img}}" wx:for-item="imgItem" wx:key="image">
+                                <view class='image-item' data-url="{{imgItem}}" data-index="{{listIndex}}" bindtap='lookImage'>
+                                    <image src="{{imgItem}}" mode="aspectFill"></image>
+                                </view>
+                            </view>
+                        </view>
+                        <view class="tip space-between">
+                            <view class="time">{{item.create_time}}</view>
+                        </view>
+                    </view>
+                </view>
+                <!-- <view class="reply-title">回复{{}}</view> -->
+            </block>
+            <block wx:if="{{item.quid === 0}}">
+                <view class="reply">
+                     <view class="title">{{item.reply_name}} 回复:</view> 
+                    <view class="box {{list[listIndex].quid !== list[listIndex+1].quid?'nostyle':''}}">
+                        <view class="reply-item column">
+                            <view class="text">
+                                {{item.content}}
+                            </view>
+                            <view class="time">
+                               {{item.create_time}}
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </block>
+            <!--<view class="bck"></view>-->
+        </view>
+
+    </view>
+    <view wx:if="{{list[0].is_solve !== 'Y'}}" class="footer flex-center topBorder">
+        <view class="btn" bindtap='putQuestions'>追问</view>
+        <view class="btn" bindtap='solve_problem'>已解决</view>
+    </view>
+</view>

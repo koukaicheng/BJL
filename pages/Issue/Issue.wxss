@@ -1,0 +1,161 @@
+/* pages/Issue/Issue.wxss */
+.container{
+  padding: 0 10rpx;
+  box-sizing: border-box;
+}
+.box{
+  /* margin-top: 20rpx; */
+  margin: 30rpx 20rpx;
+  margin-bottom: 10rpx;
+  height: 356rpx;
+  border: solid 1rpx #e2e2e2;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.box textarea{
+  padding: 10rpx 10rpx;
+  width: 100%;
+  height: 100%;
+  font-size: 30rpx;
+  /* text-indent: 1em; */
+  box-sizing: border-box;
+  
+}
+.upload{
+  margin-top: 28rpx;
+  display: flex;
+  align-items: center;
+}
+.upload-tap{
+  width: 154rpx;
+  height: 154rpx;
+  border: 2rpx dashed #999999;
+}
+.upload-tap .iconfont{
+  color: #666666;
+  font-size: 80rpx;
+}
+.upload .tip{
+  color: #999999;
+  font-size: 26rpx;
+  margin-left: 20rpx;
+}
+.sub-btn{
+  margin-top: 80rpx;
+}
+.btn{
+  width: 478rpx;
+  height: 85rpx;
+  border-radius: 42rpx;
+  background-color: #52b8f5;
+  text-align: center;
+  line-height: 85rpx;
+  color: #fff;
+  font-size: 30rpx;
+}
+
+.image-warp {
+  /* display: flex;
+  flex-wrap: wrap; */
+  padding: 10rpx;
+  box-sizing: border-box;
+  /* min-height: 500rpx; */
+  overflow: hidden;
+}
+
+.image-item {
+  float: left;
+  width: 33.33%;
+  /* height: 160rpx;  */
+  box-sizing: border-box;
+  padding: 15rpx;
+}
+
+.add {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 160rpx;
+  background: #f7f7f7;
+  border-radius: 12rpx;
+  border: 1px dashed #ccc;
+}
+
+.add .del {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: -15rpx;
+  right: -15rpx;
+  width: 50rpx;
+  height: 50rpx;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.5);
+  font-size: 28rpx;
+  color: #fff;
+  box-sizing: border-box;
+  border-radius: 50%;
+}
+
+.add .del text {
+  font-size: 34rpx;
+  color: #fff;
+}
+
+.add image {
+  width: 100%;
+  height: 100%;
+  border-radius: 12rpx;
+}
+
+.add text {
+  font-size: 120rpx;
+  color: #bcbcbc;
+}
+
+.progress {
+  position: absolute;
+  left:0;
+  
+  bottom: 0;
+  width: 100%;
+  border-radius: 10rpx;
+  z-index: 3;
+}
+
+.imageMask {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 160rpx;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 12rpx;
+  
+}
+
+.button {
+  position: fixed ;
+  bottom: 0;
+  width: 100%;
+  height: 120rpx;
+  box-sizing: border-box;
+  padding: 0 30rpx;
+  display: flex ;
+  align-items: center;
+  background: #efeff5;
+  z-index: 999;
+}
+.button button {
+  width: 100%;
+  background: #ffb912;
+  color: #fff;
+}

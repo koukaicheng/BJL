@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "身体数据",
+  "navigationBarBackgroundColor": "#52b8f5",
+  "navigationBarTextStyle": "#fff",
+  "usingComponents": {
+    "ec-canvas": "../../ec-canvas/ec-canvas"
+  },
+  "enablePullDownRefresh": false
+}

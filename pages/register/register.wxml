@@ -1,0 +1,18 @@
+<view class="wrap">
+  <view class="box">
+    <image src="../../assets/img/LOGO.png"></image>
+     <view class="content">
+         <view class="input flex-center">
+             <view class="title">用户名</view>
+             <input type="text" bindinput="userName" placeholder="请输入用户名" />
+         </view>
+         <view class="input flex-center">
+             <view class="title">密码</view>
+             <input type="password" bindinput="userPassword" placeholder="请输入密码" />
+         </view>
+     </view>
+      <view class="btn" bindtap="Submit">
+          绑定
+      </view>
+  </view>
+</view>

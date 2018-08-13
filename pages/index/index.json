@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "首页",
+  "navigationBarBackgroundColor": "#52b8f5",
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark",
+  "usingComponents": {
+    "ec-canvas": "../../ec-canvas/ec-canvas"
+  },
+    "navigationBarTextStyle": "#fff"
+}

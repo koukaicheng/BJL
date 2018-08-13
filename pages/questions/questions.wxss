@@ -1,0 +1,114 @@
+/* pages/questions /questions .wxss */
+
+.container {
+    /*overflow-y: scroll;*/
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background: #fff;
+    padding-bottom: 150rpx;
+    box-sizing: border-box;
+}
+
+.box {
+    flex: 1;
+    width: 100%;
+    position: relative;
+}
+
+.box>view:first-child {
+    /* width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0; */
+}
+
+.wrap {
+      padding: 0 28rpx; 
+}
+.proble-box {
+    /* padding: 0 28rpx; */
+}
+
+.problem-item {
+    width: 100%;
+    padding: 20rpx 0;
+    align-items: flex-start;
+}
+
+.problem-item .left {
+    padding-top: 16rpx;
+}
+
+.problem-item .left image {
+    width: 100rpx;
+    height: 100rpx;
+}
+
+.problem-item  .right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    min-height: 120rpx;
+    overflow: hidden;
+    padding-left: 30rpx;
+}
+
+.problem-item .right .content {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+    font-size: 30rpx;
+    color: #333;
+}
+
+.problem-item .right .tip {
+    padding-top: 16rpx;
+    color: #c0c0c0;
+    font-size: 24rpx;
+    line-height: 1;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    height: 150rpx;
+    width: 100%;
+}
+
+.footer .btn {
+    width: 478rpx;
+    height: 85rpx;
+    background-color: #52b8f5;
+    border-radius: 42rpx;
+    text-align: center;
+    line-height: 85rpx;
+    color: #fff;
+    font-size: 30rpx;
+}
+.loadding button {
+    border: none;
+    border-radius: 0;
+    color: #ccc;
+    font-size: 28rpx;
+    line-height: 100rpx;
+}
+
+.loadding button::after {
+    border: none;
+    border-radius: 0;
+}
+
+.nodata {
+    font-size: 28rpx;
+    color: #999;
+    text-align: center;
+    margin-top: 300rpx;
+}

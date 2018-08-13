@@ -1,0 +1,262 @@
+/* pages/bodtData/bodyData.wxss */
+
+.mark-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    z-index: 12;
+    width: 100%;
+    height: 100vh;
+    box-sizing: border-box;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 0 76rpx;
+}
+
+.mark-box {
+    width: 100%;
+    background-color: #fff;
+    border-radius: 10rpx;
+}
+
+.mark-head {
+    position: relative;
+    text-align: center;
+    padding: 30rpx 0;
+    box-sizing: border-box;
+}
+
+.mark-head .icon-jiaochacross80 {
+    position: absolute;
+    top: 28rpx;
+    right: 28rpx;
+    font-size: 50rpx;
+    color: #999;
+}
+
+.mark-list {
+    /* padding: 0 24rpx; */
+    box-sizing: border-box;
+    font-size: 30rpx;
+    line-height: 1;
+}
+
+.mark-list .mark-head-title {
+    line-height: 1.5;
+    padding-left: 24rpx;
+}
+
+.mark-list-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 26rpx 24rpx;
+    border-top: 1px #dbdbdb solid;
+}
+
+.mark-num {
+    text-align: center;
+    margin-top: 45rpx;
+    margin-bottom: 35rpx;
+}
+
+.mark-scale {
+    padding: 0 24rpx;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.mark-button-group {
+    display: flex;
+    padding: 20rpx 0;
+    margin-top: 57rpx;
+    border-top: 1px #dbdbdb solid;
+}
+
+.mark-button-group  view {
+    width: 100%;
+    text-align: center;
+    font-size: 30rpx;
+    height: 57rpx;
+    line-height: 57rpx;
+}
+
+.container {
+    /* height: 100vh; *//* overflow-y: scroll;
+    display: flex;
+    flex-direction: column; */
+    width: 100%;
+    background: #fafafa;
+    overflow: hidden;
+}
+
+.container.height {
+    height: 100vh;
+    overflow: hidden;
+}
+
+.mark-button-group  view:first-child {
+    border-right: 1px #dbdbdb solid;
+}
+
+.box {
+    width: 100%;
+    padding-top: 120rpx;
+}
+
+.box.height {
+    height: 100vh;
+    overflow: hidden;
+}
+
+.box .wrap {
+    width: 100%;
+}
+
+.header {
+    width: 100%;
+    padding: 17rpx 0;
+    background: #fafafa;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+.header .search {
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    width: 706rpx;
+    height: 76rpx;
+    margin: 0 auto;
+    border-radius: 38rpx;
+    font-size: 30rpx;
+    z-index: 10;
+    background: #fff;
+}
+
+.header .search input {
+    /*background: red;*/
+    margin-left: 8rpx;
+}
+
+.header .search .iconfont {
+    padding-left: 30rpx;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 108rpx;
+    background: #fafafa;
+    border: solid 1rpx #e2e2e2;
+    color: #52b8f5;
+}
+
+.footer .iconfont {
+    font-size: 50rpx;
+    padding-right: 10rpx;
+}
+
+.footer .text {
+    font-size: 30rpx;
+}
+
+.tab {
+    width: 100vw;
+    height: 77rpx;
+    overflow: hidden;
+    background: #fff;
+    box-sizing: border-box;
+    position: fixed;
+    top: 107rpx;
+    left: 0;
+    z-index: 10;
+}
+
+.box {
+    background: #fff;
+}
+
+.footer-scroll {
+    display: block;
+    width: 100%;
+    white-space: nowrap;
+    height: 100%;
+}
+
+.footer-scroll .tab-item {
+    /* width: 22.222222vw; */
+    padding: 0 30rpx;
+    height: 100%;
+    line-height: 77rpx;
+    display: inline-block;
+    color: #333;
+    font-size: 28rpx;
+    text-align: center;
+    position: relative;
+}
+
+.footer-scroll .active {
+    color: #52b8f5;
+}
+
+.footer-scroll .active::after {
+    position: absolute;
+    content: '';
+    width: 60%;
+    height: 4rpx;
+    background: #52b8f5;
+    bottom: 0;
+    left: 20%;
+}
+
+.box-item {
+    padding: 0 28rpx;
+}
+
+.box-item .food-item {
+    height: 134rpx;
+}
+
+.box-item .food-item .left {
+    align-items: flex-start;
+}
+
+.box-item .food-item .left .title {
+    font-size: 30rpx;
+    color: #333;
+}
+
+.box-item .food-item .left .company {
+    font-size: 24rpx;
+    color: #999;
+    padding-top: 12rpx;
+}
+
+.box-item .food-item .right .iconfont {
+    color: #52b8f5;
+    font-size: 50rpx;
+}
+
+.loadding button {
+    border: none;
+    border-radius: 0;
+    color: #ccc;
+    font-size: 28rpx;
+    line-height: 100rpx;
+}
+
+.loadding button::after {
+    border: none;
+    border-radius: 0;
+}
+
+.nodata {
+    text-align: center;
+    margin-top: 100rpx;
+    font-size: 30rpx;
+    color: #999;
+}

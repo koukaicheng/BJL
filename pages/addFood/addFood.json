@@ -1,0 +1,10 @@
+{
+    "navigationBarTitleText": "添加食物",
+    "navigationBarBackgroundColor": "#52b8f5",
+    "navigationBarTextStyle": "#fff",
+    "onReachBottomDistance": 50,
+    "usingComponents": {
+        "scale": "/components/wx-scale/wx-scale"
+    }
+   
+}

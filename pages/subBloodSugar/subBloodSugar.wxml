@@ -1,0 +1,38 @@
+
+<view class="wrap">
+    <view class="form">
+        <view class="item bottomBorder">
+           <view class="title">填写血糖数量</view>
+            <input type="digit" placeholder="0" bindinput="bindsugarVal" />
+            <text>mmol/L</text>
+        </view>
+        <view class="item bottomBorder">
+            <view class="title">测量时间</view>
+
+            <view class="space-between">
+                <picker mode="date" value="{{date}}" start="date"  bindchange="bindData">
+                    <text>{{date}}</text>
+                </picker>
+                <picker mode="time" value="{{time}}" start="time" bindchange="bindTime">
+                    <text style="padding-left: 20rpx">{{time}}</text>
+                </picker>
+            </view>
+        </view>
+        <view class="item bottomBorder">
+            <view class="title">测量时间</view>
+            <view class="left">
+                <picker mod="selector" range="{{objectArray}}" range-key="name" bindchange="bindType">
+                    <text>{{typeText}}</text>
+                    <text class="iconfont icon-jiantou1"></text>
+                </picker>
+            </view>
+        </view>
+        <view class="item">
+            <view class="title">备注说明</view>
+            <textarea maxlength="100" bindinput="bindremarks"></textarea>
+        </view>
+    </view>
+
+
+    <view class="btn" bindtap="next">保存</view>
+</view>

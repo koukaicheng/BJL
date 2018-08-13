@@ -1,0 +1,190 @@
+<view class="container">
+  <scroll-view scroll-y style="height: 100%;">
+    <view>
+      <view class="content">
+        <view class="top space-between">
+          <view class="condition column">
+            <view class="title">妈妈营养状况分析</view>
+            <view class="status">
+              <view style="color:{{mother_status.color}}">{{mother_status.text}}</view>
+            </view>
+          </view>
+          <view class="condition column">
+            <view class="title">胎儿营养状况分析</view>
+            <view class="status">
+              <view style="color:{{fetus_status.color}}">{{fetus_status.text}}</view>
+            </view>
+          </view>
+        </view>
+        <view class="middle flex-center bottomBorder">
+          <view class="item column">
+            <view class="title">孕期</view>
+            <view class="company">{{detail.edc}}</view>
+          </view>
+          <view class="item column">
+            <view class="title">孕前体重</view>
+            <view class="company">{{detail.yq_weight}}kg</view>
+          </view>
+          <view class="item column">
+            <view class="title">当前体重</view>
+            <view class="company">{{detail.dq_weight || ''}}kg</view>
+          </view>
+        </view>
+        <view class="bottom space-between">
+          <view class="left">
+            <text class="iconfont icon-light"></text>
+          </view>
+          <view class="right">
+            <view class="text">
+              {{detail.weight_str}}
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="content">
+        <view class="line flex-center">
+          <view class="line-item"></view>
+          <view class="box column">
+            <view class="text">孕中期营养素摄入标准</view>
+            <view class="company">(/天)</view>
+          </view>
+          <view class="line-item"></view>
+        </view>
+        <view class="standards">
+          <view class="item space-between">
+            <view class="title">能量</view>
+            <view class="data">{{detail.intake_caloric}}大卡</view>
+          </view>
+          <view class="item space-between">
+            <view class="title">脂肪</view>
+            <view class="data">{{detail.intake_fat}}</view>
+          </view>
+          <view class="item space-between">
+            <view class="title">蛋白质</view>
+            <view class="data">{{detail.intake_protein}}</view>
+          </view>
+          <view class="item space-between">
+            <view class="title">碳水化合物</view>
+            <view class="data">{{detail.intake_carbohydrate}}</view>
+          </view>
+        </view>
+      </view>
+      <view class="content">
+        <view class="line flex-center">
+          <view class="line-item"></view>
+          <view class="box column">
+            <view class="text">营养评价</view>
+          </view>
+          <view class="line-item"></view>
+        </view>
+        <view class="table">
+          <view class="table-item space-between bottomBorder">
+            <view class="left flex-center">
+              <view class="text">
+                营养素
+              </view>
+            </view>
+            <view class="right flex-center">
+              <view class="text">
+                营养评价
+              </view>
+            </view>
+          </view>
+          <view class="table-item space-between bottomBorder">
+            <view class="left flex-center">
+              <view class="text">
+                蛋白质
+              </view>
+            </view>
+            <view class="right flex-center">
+              <view class="text">
+                {{detail.evaluation_protein}}
+              </view>
+            </view>
+          </view>
+          <view class="table-item space-between bottomBorder">
+            <view class="left flex-center">
+              <view class="text">
+                脂肪
+              </view>
+            </view>
+            <view class="right flex-center">
+              <view class="text">
+                {{detail.evaluation_fat}}
+              </view>
+            </view>
+          </view>
+          <view class="table-item space-between bottomBorder">
+            <view class="left flex-center">
+              <view class="text">
+                碳水化合物
+              </view>
+            </view>
+            <view class="right flex-center">
+              <view class="text">
+                {{detail.evaluation_carbohydrate}}
+              </view>
+            </view>
+          </view>
+          <view class="table-item space-between bottomBorder">
+            <view class="left flex-center">
+              <view class="text">
+                钙
+              </view>
+            </view>
+            <view class="right flex-center">
+              <view class="text">
+                {{detail.evaluation_calcium}}
+              </view>
+            </view>
+          </view>
+          <view class="table-item space-between">
+            <view class="left flex-center">
+              <view class="text">
+                铁
+              </view>
+            </view>
+            <view class="right flex-center">
+              <view class="text">
+                {{detail.evaluation_iron}}
+              </view>
+            </view>
+          </view>
+
+        </view>
+      </view>
+      <view class="content last">
+        <view class="line flex-center">
+          <view class="line-item"></view>
+          <view class="box column">
+            <view class="text">运动评价</view>
+          </view>
+          <view class="line-item"></view>
+        </view>
+        <view class="proposal">
+          {{detail.evaluation_exercise}}
+        </view>
+      </view>
+ <view class="content last">
+        <view class="line flex-center">
+          <view class="line-item"></view>
+          <view class="box column">
+            <view class="text">医生建议</view>
+          </view>
+          <view class="line-item"></view>
+        </view>
+        <view class="proposal">
+          {{detail.doctor_advice||'暂时没有医生建议'}}
+        </view>
+      </view>
+
+
+
+    </view>
+    <!-- <view class="statusText" wx:else>
+      <view class="text">
+        暂时没有营养处方
+      </view>
+    </view> -->
+  </scroll-view>
+</view>

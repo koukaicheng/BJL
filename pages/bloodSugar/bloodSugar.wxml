@@ -1,0 +1,90 @@
+<view class="wrap">
+    <view class="header">
+        <view class="circle">
+            <view class="val" wx:if="{{last}}">{{last.blood_sugar}}</view>
+            <view class="val" wx:else>--</view>
+            <view class="text" wx:if="{{!last.blood_sugar}}">今日未记录</view>
+            <view class="text" wx:else>mmol/L</view>
+        </view>
+        <view class="box" wx:if="{{last.point===1}}">
+            <view class="triangle_border_left">
+            </view>
+            <view class="text-box">
+                您的血糖偏低  睡前请适当进食
+            </view>
+        </view>
+    </view>
+    <!--<view class="section column">-->
+        <!--<view class="location">-->
+            <!--<view class="item">-->
+                <!--<text class="iconfont icon-dingwei" wx:if="{{last.blood_sugar>=0&&last.blood_sugar<3.9}}"></text>-->
+            <!--</view>-->
+            <!--<view class="item">-->
+                <!--<text class="iconfont icon-dingwei" wx:if="{{last.blood_sugar>=4&&last.blood_sugar<6.0}}"></text>-->
+            <!--</view>-->
+            <!--<view class="item">-->
+                <!--<text class="iconfont icon-dingwei" wx:if="{{last.blood_sugar>=6.1&&last.blood_sugar<7.8}}"></text>-->
+            <!--</view>-->
+            <!--<view class="item">-->
+                <!--<text class="iconfont icon-dingwei" wx:if="{{last.blood_sugar>7.9}}"></text>-->
+            <!--</view>-->
+        <!--</view>-->
+        <!--<view class="block">-->
+            <!--<view class="item" style="background: #7DBEDD;">0~3.9</view>-->
+            <!--<view class="item" style="background: #50C343;">4~6.0</view>-->
+            <!--<view class="item" style="background: #FF9800;">6.1~7.8</view>-->
+            <!--<view class="item" style="background: #E51C23;">7.9~11.1</view>-->
+        <!--</view>-->
+        <!--<view class="text">-->
+            <!--<view class="item">低血糖</view>-->
+            <!--<view class="item">正常</view>-->
+            <!--<view class="item">糖尿病前期</view>-->
+            <!--<view class="item">高血糖</view>-->
+        <!--</view>-->
+    <!--</view>-->
+    <view class="btn"  data-url="/pages/subBloodSugar/subBloodSugar" bindtap="link">记录血糖</view>
+    <view class="tipsss">一周趋势变化</view>
+    <view class="chart" >
+
+        <ec-canvas id="mychart-dom-line" class="charts" canvas-id="mychart-line" ec="{{ ec }}"></ec-canvas>
+    </view>
+
+    <!-- <view class="guidance">
+        <view class="text" wx:if="{{guide.guide}}">{{guide.guide}}</view>
+        <view class="text" wx:else>暂时没有指导意见</view>
+    </view> -->
+
+
+    <view class="histroy">
+        <view class="title">历史记录</view>
+        <view class="box">
+        <view class='list'>
+         <view class='status'>
+           <view class='time' style='width:234rpx; justify-content:flex-start;'>
+              日期
+           </view>
+           <view class='newVal'>
+              血糖值(mmol/L)
+           </view>
+           <view class='zt'>状态</view>
+         </view>
+        </view>
+            <view class="list" wx:for="{{list}}" wx:key="list">
+                <view class="status">
+                    <view class="time">
+                        <view class="year">{{item.measure_time.date}}</view>
+                        <view class="minute">{{item.measure_time.time}}</view>
+                    </view>
+                    <view class="newVal" style='flex:1;'>
+                        <view class="tip">{{item.text}}</view>
+                        <view class="val">{{item.blood_sugar}}</view>
+                    </view>
+                    <view class="zt" style="color:{{item.level_color.color}}">{{item.level_color.str}}</view>
+                </view>
+            </view>
+        </view>
+        <view wx:if="{{isLoadShow}}" class='loadding'>
+            <button loading="{{isLoad}}">{{isLoadTitle}}</button>
+        </view>
+    </view>
+</view>
